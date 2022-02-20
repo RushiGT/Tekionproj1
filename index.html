@@ -154,6 +154,7 @@
             position: relative;
             top: 3px;
             right: 85px;
+            
 
         }
 
@@ -475,29 +476,32 @@
         }
 
         .menu {
-            
+
             width: 1728px;
-            height: 1000px;
+            height: max-content;
             position: relative;
             top: -80px;
             left: -8px;
             z-index: -2;
-            
+            background-color: #f9f9f9;
+
         }
+
         .menu0 {
             display: flex;
             flex-direction: row;
             width: 1200px;
             margin-left: 15%;
-            
-        } 
+
+
+        }
 
         .varieties {
-           
-           flex :1.37 ;
-           height: 372px;
-           
-            
+
+            flex: 1.37;
+            height: 372px;
+
+
         }
 
         .varieties1 {
@@ -506,57 +510,171 @@
             color: #282c3f;
             margin-top: 75px;
             margin-right: 0px;
-        
+
 
         }
-        .varieties1 > li {
-             margin-top : 8px;
-             margin-bottom: 8px;
-             margin-right: 0px;
-             border-right: 1px solid orange;
-             text-align: right;
-             padding-right: 40px;
-             
-        } 
-        .menuim {
-             flex :3.4;
-            background-color: green;
-            border: 2px solid #282c3f;
-        } 
-        .filler {
-             flex : 1.6; 
-             height: max-content;
-             
+
+        .varieties1>li {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            margin-right: 0px;
+            text-align: right;
+            padding-right: 40px;
+
         }
-        .filler0 
-        {
-         position: relative;
-         top: 70px;    
-        } 
-        .CE 
-        {
+
+        .menuim {
+            flex: 3.4;
+            border-left: 0.5px solid rgb(180, 180, 180);
+        }
+
+        .filler {
+            flex: 1.6;
+            height: max-content;
+
+        }
+
+        .filler0 {
             position: relative;
-            top:-14px;
-            left:16px;
+            top: 70px;
+        }
+
+        .CE {
+            position: relative;
+            top: -14px;
+            left: 16px;
             font-weight: 300;
             color: #7e808c;
             letter-spacing: -.3px;
             font-size: 32px;
-        } 
-        .filler0 > img {
+        }
+
+        .filler0>img {
             position: relative;
             left: 19px;
             top: 25px;
         }
-        .CE2 
-        {
+
+        .CE2 {
             position: relative;
-            top:40px;
-            left:16px;
+            top: 40px;
+            left: 16px;
             color: #93959f;
             font-size: 16px;
             font-weight: 300;
             width: 218px;
+        }
+
+        .menuim1 {
+            display: flex;
+            flex-direction: column;
+            width: 538px;
+            height: 1400px;
+            ;
+            position: relative;
+            top: 110px;
+            left: 50px;
+
+
+        }
+
+        .menunm0 {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            font-size: 32px;
+            font-weight: 1000;
+            color: #3e4152;
+            word-break: break-word;
+        }
+
+        .m1 {
+            height: 155px;
+            border-bottom: 0.5px solid rgb(180, 180, 180);
+            font-size: 16px;
+            font-weight: 500;
+            color: #3e4152;
+            word-break: break-word;
+
+        }
+
+        .m01 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .m1in {
+            flex: 1;
+
+        }
+
+        .m1im {
+            flex: 1;
+        }
+
+        .m1im1 {
+            position: relative;
+            left: 140px;
+            top: 30px;
+
+        }
+
+        .m1in1 {
+            position: relative;
+            top: 30px;
+        }
+
+        .m1in2 {
+            position: relative;
+            top: 50px;
+            font-weight: 600;
+
+        }
+
+        .m1in3 {
+            position: relative;
+            top: 70px;
+        }
+
+        .footer0 {
+            background-color: #fc8019;
+            position: relative;
+            top:-81px;
+            font-weight: 300;
+            width: 1728px;
+            height: max-content;
+    color: #282c3f;
+            
+        }
+
+        .footer1 {
+            background-color: #bcc5ba;
+
+        }
+
+        .foin {
+            display: flex;
+            flex-direction: row;
+            width: 1200px;
+            position: relative;
+            left: 264px;
+            top:50px;
+        }
+        .foin1
+        {
+            flex:1;
+            height: 123px;
+            text-align: center;
+        }
+        .foin2
+        {
+            flex:1;
+            height: 123px;
+            text-align: center;
+            
+        }
+        .footlic {
+             text-align: center;
         }
     </style>
 </head>
@@ -701,15 +819,151 @@
                 </ul>
             </div>
             <div class="menuim">
+                <div class="menunm">
+                    <div class="menunm0">
+                        Recommended </div>
+                </div>
+                <div class="menuim1">
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im01" class="m1im1" loading="lazy"
+                                    width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
 
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im02" class="m1im1" loading="lazy"
+                                    width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im03" class="m1im1" loading="lazy"
+                                    width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im04" class="m1im1" loading="lazy"
+                                    width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im05" class="m1im1" width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im06" class="m1im1" width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="m1 menuimc">
+                        <div class="m01">
+                            <div class="m1in">
+                                <div class="m1in1">Veg</div>
+                                <div class="m1in2">Veg Hot & Sour Soup</div>
+                                <div class="m1in3">₹ 125</div>
+                            </div>
+                            <div class="m1im">
+                                <img alt="Veg Hot &amp; Sour Soup" id="m1im07" class="m1im1" width="118px" height="96px"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
             <div class="filler">
                 <div class="filler0">
-                     <div class="CE">Cart Empty</div> 
-                     <img src="Cart_empty_-_menu_2x_ejjkf2.png" height="212px" width="278" clas="ceimg">
-                     <div class="CE2">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
-                    </div>
+                    <div class="CE">Cart Empty</div>
+                    <img src="Cart_empty_-_menu_2x_ejjkf2.png" height="212px" width="278" clas="ceimg">
+                    <div class="CE2">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="footer0">
+        <div class="footer1">
+            <div class="foin">
+                <div class="foin1">
+                    <div class="addfoo">ADDRESS</div>
+                    <div class="addfoo1"></div>
+                    <div class="addfoo2">Relish, 1st Floor, Shivam Arcade, Opposite Nirman Tower, R C Technical Road,
+                        Chanakyapuri, Ghatlodia, Ahmedabad</div>
+                </div>
+                <div class="foin2">
+                    <div class="cui1">CUISINES</div>
+                    <div class="cui2"></div>
+                    <div class="cui3">Indian</div>
+
+                </div>
+
+            </div>
+            <div class="footlic"> Lincense No. 22717105000867</div>
+
         </div>
     </div>
 </body>
