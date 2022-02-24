@@ -6,964 +6,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kitchens of Punjab</title>
-    <style>
-        body {
-            overflow-x: hidden;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-
-        }
-
-        .head {
-
-            display: block;
-            margin-top: 0px;
-            background: rgb(255, 255, 255);
-            /*border : 2px solid black;*/
-            padding: 50px 50px;
-            position: relative;
-            top: -15px;
-            left: -8px;
-
-        }
-
-        .loc {
-
-            position: absolute;
-            top: 20px;
-            left: 345px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-        }
-
-        .set {
-            width: max-content;
-            position: absolute;
-            top: 20px;
-            left: 0px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 700;
-            color: #3d4152;
-            cursor: pointer;
-
-        }
-
-        .set::after {
-            content: "";
-            position: absolute;
-            height: 2px;
-            left: 0;
-            bottom: -5px;
-            width: 100%;
-            background: #3d4152;
-
-
-        }
-
-        .choose {
-            width: max-content;
-            position: absolute;
-            top: 20px;
-            left: 95px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            font-size: 14px;
-            line-height: 1.2;
-            cursor: pointer;
-            color: #686b78;
-
-        }
-
-        .hdlist {
-            display: inline;
-            width: max-content;
-            height: auto;
-            position: absolute;
-            right: 136px;
-            top: 36px;
-
-
-        }
-
-        .hdlist>ul {
-
-            margin-top: 0px;
-        }
-
-        .hdlist li {
-            float: left;
-            list-style: none;
-            margin-right: 70px;
-            font-size: 16px;
-            font-weight: 500;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            cursor: pointer;
-
-        }
-
-        .imagelogo {
-            height: 49px;
-            width: 34px;
-            position: absolute;
-            top: 20px;
-            left: 270px;
-            display: inline;
-
-
-        }
-
-        .arrow {
-            position: absolute;
-            top: 18px;
-            left: 265px;
-            border: solid #fc8019;
-            cursor: pointer;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 0.12cm;
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-
-        }
-
-        .set:hover {
-            color: #fc8019;
-
-        }
-
-        .set:hover::after {
-            background: #fc8019;
-        }
-
-        .help:hover {
-            color: #fc8019;
-        }
-
-        ._1GTCc {
-            position: relative;
-            top: 3px;
-            right: 67px;
-
-        }
-
-        ._1GTCc2 {
-            position: relative;
-            top: 3px;
-            right: 85px;
-            
-
-        }
-
-        ._1GTCc3 {
-            position: relative;
-            top: 4px;
-            right: 63px;
-            fill: #fff;
-            stroke-width: 2px;
-            stroke: #282c3f;
-
-        }
-
-        ._2vS77 {
-            position: relative;
-            top: -1px;
-            right: 80px;
-            transform: translate(-50%, -50%);
-            font-size: 14px;
-            font-weight: 600;
-            color: #3d4152;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-
-        }
-
-        .head2 {
-
-            height: 30px;
-            width: max-content;
-            position: relative;
-            top: 10px;
-            left: 270px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            font-size: 10px;
-            color: #93959f;
-            align-items: center;
-            font-weight: 400;
-
-        }
-
-        .web1 {
-            background-color: rgb(247, 246, 246);
-            height: 30px;
-            width: 1728px;
-            position: relative;
-            top: -29px;
-            left: -8px;
-            max-width: 1728px;
-
-
-        }
-
-        .NAME1 {
-            color: #535665;
-        }
-
-        .lgo {
-
-            height: 245px;
-            width: 1728px;
-            position: relative;
-            top: -28px;
-            background-color: #272324;
-            color: #ffffff;
-            left: -8px;
-        }
-
-        .subg0 {
-            Display: table-cell;
-            vertical-align: top;
-            width: 254px;
-            height: 251.59px;
-
-        }
-
-        .subg {
-            position: relative;
-            top: 43.295px;
-            left: 263px;
-        }
-
-        .board0 {
-            position: relative;
-            top: -171px;
-            left: 554px;
-
-        }
-
-        .kop0 {
-            width: 538px;
-            height: 38.4px;
-            position: relative;
-            top: -26px;
-            left: 18px;
-
-        }
-
-        .kop1 {
-            width: max-content;
-            height: 38.4px;
-            font-weight: lighter;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            font-size: 32px;
-        }
-
-        .pun0 {
-            position: relative;
-            top: -20px;
-            left: 20px;
-            opacity: .7;
-            font-size: 15px;
-            font-weight: 300;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-        }
-
-        .Bil0 {
-            position: relative;
-            top: -10px;
-            left: 20px;
-            opacity: .7;
-            font-size: 15px;
-            font-weight: 300;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-        }
-
-        .rat {
-            position: relative;
-            top: -165px;
-            left: 575px;
-            width: max-content;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-
-        }
-
-        .rat0 {
-            display: inline-block;
-        }
-
-        .icon-star::after {
-            content: "\E938";
-        }
-
-        .fr {
-            margin-right: 2px;
-            padding-right: 30px;
-            padding-left: 5px;
-            border-right: 1px solid grey;
-
-        }
-
-        .fr1 {
-            margin-right: 2px;
-            padding-right: 30px;
-            padding-left: 30px;
-            border-right: 1px solid grey;
-
-        }
-
-        .fr2 {
-            padding-left: 30px;
-        }
-
-        .rat2 {
-            font-weight: 400;
-            font-size: 12px;
-            margin-top: 5px;
-
-        }
-
-        .rat1 {
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .offer0 {
-            position: absolute;
-            top: 0px;
-            right: 271px;
-            width: 298px;
-            height: 251px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            font-size: 14px;
-        }
-
-        .offer2 {
-            position: absolute;
-            top: 70px;
-            left: 0px;
-            border: 1px solid grey;
-            width: 298px;
-            height: 129px;
-        }
-
-        .offe {
-
-            position: absolute;
-            top: 31px;
-            right: 40px;
-            bottom: 25px;
-            left: 54px;
-        }
-
-        .off2e {
-            width: 227px;
-            height: 33.59px;
-        }
-
-        .off3c {
-            display: inline;
-        }
-
-        .offer5 {
-            position: relative;
-            top: 10px;
-        }
-
-        .offer1 {
-            font-size: 20px;
-            font-weight: 500;
-            text-transform: uppercase;
-            position: relative;
-            top: 60px;
-            width: max-content;
-            height: 34px;
-            padding-right: 10px;
-            z-index: 20;
-            background-color: #272324;
-        }
-
-        .offer3 {
-            margin-bottom: 10px;
-        }
-
-        .spbre {
-            border-right: 1px solid grey;
-            padding-right: 5px;
-            margin-right: 5px;
-        }
-
-        .search {
-
-            position: relative;
-            top: -50px;
-            left: 570px;
-            width: 538px;
-            height: 40px;
-            vertical-align: middle;
-            text-align: center;
-            padding-right: 15px;
-            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-            letter-spacing: 0;
-            color: #3d4152;
-        }
-
-        .search2 {
-            background-color: #ffffff;
-            height: 40px;
-            width: 254px;
-
-
-        }
-
-        input.srchpl {
-            border: #fff;
-        }
-
-        .search3 {
-            position: absolute;
-            top: 0px;
-            left: 280px;
-            background-color: white;
-            height: 40px;
-            width: 116px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .search4 {
-            position: absolute;
-            top: 0px;
-            left: 420px;
-            background-color: white;
-            height: 40px;
-            width: 122px;
-        }
-
-        .search5 {
-            font-size: 14px;
-            font-weight: 600;
-            vertical-align: middle;
-            position: absolute;
-            top: 15px;
-            left: 17px;
-        }
-
-        .searchx {
-            position: absolute;
-            top: 12px;
-            left: 17px;
-        }
-
-        .srchmn {
-            position: relative;
-            left: 20px;
-            top: 12px;
-        }
-
-        .srchsym {
-            position: absolute;
-            left: 0px;
-            top: 12px;
-        }
-
-        .menu {
-
-            width: 1728px;
-            height: max-content;
-            position: relative;
-            top: -80px;
-            left: -8px;
-            z-index: -2;
-            background-color: #f9f9f9;
-
-        }
-
-        .menu0 {
-            display: flex;
-            flex-direction: row;
-            width: 1200px;
-            margin-left: 15%;
-
-
-        }
-
-        .varieties {
-
-            flex: 1.37;
-            height: 372px;
-
-
-        }
-
-        .varieties1 {
-            list-style: none;
-            font-weight: 300;
-            color: #282c3f;
-            margin-top: 75px;
-            margin-right: 0px;
-
-
-        }
-
-        .varieties1>li {
-            margin-top: 8px;
-            margin-bottom: 8px;
-            margin-right: 0px;
-            text-align: right;
-            padding-right: 40px;
-
-        }
-
-        .menuim {
-            flex: 3.4;
-            border-left: 0.5px solid rgb(180, 180, 180);
-        }
-
-        .filler {
-            flex: 1.6;
-            height: max-content;
-
-        }
-
-        .filler0 {
-            position: relative;
-            top: 70px;
-        }
-
-        .CE {
-            position: relative;
-            top: -14px;
-            left: 16px;
-            font-weight: 300;
-            color: #7e808c;
-            letter-spacing: -.3px;
-            font-size: 32px;
-        }
-
-        .filler0>img {
-            position: relative;
-            left: 19px;
-            top: 25px;
-        }
-
-        .CE2 {
-            position: relative;
-            top: 40px;
-            left: 16px;
-            color: #93959f;
-            font-size: 16px;
-            font-weight: 300;
-            width: 218px;
-        }
-
-        .menuim1 {
-            display: flex;
-            flex-direction: column;
-            width: 538px;
-            height: 1400px;
-            ;
-            position: relative;
-            top: 110px;
-            left: 50px;
-
-
-        }
-
-        .menunm0 {
-            position: relative;
-            top: 50px;
-            left: 50px;
-            font-size: 32px;
-            font-weight: 1000;
-            color: #3e4152;
-            word-break: break-word;
-        }
-
-        .m1 {
-            height: 155px;
-            border-bottom: 0.5px solid rgb(180, 180, 180);
-            font-size: 16px;
-            font-weight: 500;
-            color: #3e4152;
-            word-break: break-word;
-
-        }
-
-        .m01 {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .m1in {
-            flex: 1;
-
-        }
-
-        .m1im {
-            flex: 1;
-        }
-
-        .m1im1 {
-            position: relative;
-            left: 140px;
-            top: 30px;
-
-        }
-
-        .m1in1 {
-            position: relative;
-            top: 30px;
-        }
-
-        .m1in2 {
-            position: relative;
-            top: 50px;
-            font-weight: 600;
-
-        }
-
-        .m1in3 {
-            position: relative;
-            top: 70px;
-        }
-
-        .footer0 {
-            background-color: #fc8019;
-            position: relative;
-            top:-81px;
-            font-weight: 300;
-            width: 1728px;
-            height: max-content;
-    color: #282c3f;
-            
-        }
-
-        .footer1 {
-            background-color: #bcc5ba;
-
-        }
-
-        .foin {
-            display: flex;
-            flex-direction: row;
-            width: 1200px;
-            position: relative;
-            left: 264px;
-            top:50px;
-        }
-        .foin1
-        {
-            flex:1;
-            height: 123px;
-            text-align: center;
-        }
-        .foin2
-        {
-            flex:1;
-            height: 123px;
-            text-align: center;
-            
-        }
-        .footlic {
-             text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="head">
-        <img src="swiggy-logo.svg" class="imagelogo" alt="unable to display">
-        <div class="loc">
-            <span class="set"> Set location
-                <!-- <span class="sa"> </span> -->
-            </span>
-            <span class="choose"> Click to Choose Location </span>
-            <span class="arrow"> </span>
-        </div>
-        <div class="hdlist">
-            <ul>
-                <li class="help"><a>Help <svg class="_1GTCc" viewBox="6 -1 12 25" height="19" width="19" fill="#686b78">
-                            <path
-                                d="M21.966903,13.2244898 C22.0156989,12.8231523 22.0408163,12.4145094 22.0408163,12 C22.0408163,11.8357822 22.036874,11.6724851 22.029079,11.5101984 L17.8574333,11.5102041 C17.8707569,11.6717062 17.877551,11.8350597 17.877551,12 C17.877551,12.4199029 17.8335181,12.8295214 17.749818,13.2244898 L21.966903,13.2244898 Z M21.5255943,15.1836735 L16.9414724,15.1836735 C15.8950289,16.8045422 14.0728218,17.877551 12,17.877551 C9.92717823,17.877551 8.1049711,16.8045422 7.05852762,15.1836735 L2.47440565,15.1836735 C3.80564362,19.168549 7.56739481,22.0408163 12,22.0408163 C16.4326052,22.0408163 20.1943564,19.168549 21.5255943,15.1836735 Z M21.7400381,9.55102041 C20.6468384,5.18931674 16.7006382,1.95918367 12,1.95918367 C7.2993618,1.95918367 3.3531616,5.18931674 2.25996187,9.55102041 L6.6553883,9.55102041 C7.58404845,7.5276442 9.62792376,6.12244898 12,6.12244898 C14.3720762,6.12244898 16.4159515,7.5276442 17.3446117,9.55102041 L21.7400381,9.55102041 Z M2.03309705,13.2244898 L6.25018203,13.2244898 C6.16648186,12.8295214 6.12244898,12.4199029 6.12244898,12 C6.12244898,11.8350597 6.1292431,11.6717062 6.14256675,11.5102041 L1.97092075,11.5102041 C1.96312595,11.6724851 1.95918367,11.8357822 1.95918367,12 C1.95918367,12.4145094 1.98430112,12.8231523 2.03309705,13.2244898 Z M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,15.9183673 C14.1640545,15.9183673 15.9183673,14.1640545 15.9183673,12 C15.9183673,9.83594547 14.1640545,8.08163265 12,8.08163265 C9.83594547,8.08163265 8.08163265,9.83594547 8.08163265,12 C8.08163265,14.1640545 9.83594547,15.9183673 12,15.9183673 Z">
-                            </path>
-                        </svg>
-                    </a>
-                </li>
-                <li class="sign"><a> Sign In
-                        <svg class="_1GTCc2" viewBox="6 0 12 24" height="19" width="18" fill="#686b78">
-                            <path
-                                d="M11.9923172,11.2463768 C8.81761115,11.2463768 6.24400341,8.72878961 6.24400341,5.62318841 C6.24400341,2.5175872 8.81761115,0 11.9923172,0 C15.1670232,0 17.740631,2.5175872 17.740631,5.62318841 C17.740631,8.72878961 15.1670232,11.2463768 11.9923172,11.2463768 Z M11.9923172,9.27536232 C14.0542397,9.27536232 15.7257581,7.64022836 15.7257581,5.62318841 C15.7257581,3.60614845 14.0542397,1.97101449 11.9923172,1.97101449 C9.93039471,1.97101449 8.25887628,3.60614845 8.25887628,5.62318841 C8.25887628,7.64022836 9.93039471,9.27536232 11.9923172,9.27536232 Z M24,24 L0,24 L1.21786143,19.7101449 L2.38352552,15.6939891 C2.85911209,14.0398226 4.59284263,12.7536232 6.3530098,12.7536232 L17.6316246,12.7536232 C19.3874139,12.7536232 21.1256928,14.0404157 21.6011089,15.6939891 L22.9903494,20.5259906 C23.0204168,20.63057 23.0450458,20.7352884 23.0641579,20.8398867 L24,24 Z M21.1127477,21.3339312 L21.0851024,21.2122487 C21.0772161,21.1630075 21.0658093,21.1120821 21.0507301,21.0596341 L19.6614896,16.2276325 C19.4305871,15.4245164 18.4851476,14.7246377 17.6316246,14.7246377 L6.3530098,14.7246377 C5.4959645,14.7246377 4.55444948,15.4231177 4.32314478,16.2276325 L2.75521062,21.6811594 L2.65068631,22.0289855 L21.3185825,22.0289855 L21.1127477,21.3339312 Z">
-                            </path>
-                        </svg>
-                    </a>
-                </li>
-                <li class="cart "><a>Cart
-                        <svg class="_1GTCc3" viewBox="-1 0 37 32" height="20" width="20" fill="#686b78">
-                            <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
-                        </svg>
-                        <span class="_2vS77">0</span> </a></li>
-            </ul>
-        </div>
-
+        <div class="head0">
+            <div class="imagelogo">
+                <img src="swiggy-logo.svg" class="imagelogo1" alt="unable to display">
+            </div>
+            <div class="loc">
+                <div class="loc0">
+                    <div class="set0">
+                        <span class="set"> Set location
+                            <!-- <span class="sa"> </span> -->
+                        </span>
+                    </div>
+                    <div class="choose0">
+                        <span class="choose"> Click to Choose Location </span>
+                    </div>
+                    <div class="arrow0">
+                        <span class="arrow"> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="hdlist">
+                <div class="hdlist0">
+                    <div class="help orange"><a><svg class="_1GTCc" viewBox="6 -1 12 25" height="19" width="19"
+                                fill="#686b78">
+                                <path
+                                    d="M21.966903,13.2244898 C22.0156989,12.8231523 22.0408163,12.4145094 22.0408163,12 C22.0408163,11.8357822 22.036874,11.6724851 22.029079,11.5101984 L17.8574333,11.5102041 C17.8707569,11.6717062 17.877551,11.8350597 17.877551,12 C17.877551,12.4199029 17.8335181,12.8295214 17.749818,13.2244898 L21.966903,13.2244898 Z M21.5255943,15.1836735 L16.9414724,15.1836735 C15.8950289,16.8045422 14.0728218,17.877551 12,17.877551 C9.92717823,17.877551 8.1049711,16.8045422 7.05852762,15.1836735 L2.47440565,15.1836735 C3.80564362,19.168549 7.56739481,22.0408163 12,22.0408163 C16.4326052,22.0408163 20.1943564,19.168549 21.5255943,15.1836735 Z M21.7400381,9.55102041 C20.6468384,5.18931674 16.7006382,1.95918367 12,1.95918367 C7.2993618,1.95918367 3.3531616,5.18931674 2.25996187,9.55102041 L6.6553883,9.55102041 C7.58404845,7.5276442 9.62792376,6.12244898 12,6.12244898 C14.3720762,6.12244898 16.4159515,7.5276442 17.3446117,9.55102041 L21.7400381,9.55102041 Z M2.03309705,13.2244898 L6.25018203,13.2244898 C6.16648186,12.8295214 6.12244898,12.4199029 6.12244898,12 C6.12244898,11.8350597 6.1292431,11.6717062 6.14256675,11.5102041 L1.97092075,11.5102041 C1.96312595,11.6724851 1.95918367,11.8357822 1.95918367,12 C1.95918367,12.4145094 1.98430112,12.8231523 2.03309705,13.2244898 Z M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,15.9183673 C14.1640545,15.9183673 15.9183673,14.1640545 15.9183673,12 C15.9183673,9.83594547 14.1640545,8.08163265 12,8.08163265 C9.83594547,8.08163265 8.08163265,9.83594547 8.08163265,12 C8.08163265,14.1640545 9.83594547,15.9183673 12,15.9183673 Z">
+                                </path>
+                            </svg>
+                            Help
+                        </a>
+                    </div>
+                    <div class="sign orange"><a>
+                            <svg class="_1GTCc2" viewBox="6 0 12 24" height="19" width="18" fill="#686b78">
+                                <path
+                                    d="M11.9923172,11.2463768 C8.81761115,11.2463768 6.24400341,8.72878961 6.24400341,5.62318841 C6.24400341,2.5175872 8.81761115,0 11.9923172,0 C15.1670232,0 17.740631,2.5175872 17.740631,5.62318841 C17.740631,8.72878961 15.1670232,11.2463768 11.9923172,11.2463768 Z M11.9923172,9.27536232 C14.0542397,9.27536232 15.7257581,7.64022836 15.7257581,5.62318841 C15.7257581,3.60614845 14.0542397,1.97101449 11.9923172,1.97101449 C9.93039471,1.97101449 8.25887628,3.60614845 8.25887628,5.62318841 C8.25887628,7.64022836 9.93039471,9.27536232 11.9923172,9.27536232 Z M24,24 L0,24 L1.21786143,19.7101449 L2.38352552,15.6939891 C2.85911209,14.0398226 4.59284263,12.7536232 6.3530098,12.7536232 L17.6316246,12.7536232 C19.3874139,12.7536232 21.1256928,14.0404157 21.6011089,15.6939891 L22.9903494,20.5259906 C23.0204168,20.63057 23.0450458,20.7352884 23.0641579,20.8398867 L24,24 Z M21.1127477,21.3339312 L21.0851024,21.2122487 C21.0772161,21.1630075 21.0658093,21.1120821 21.0507301,21.0596341 L19.6614896,16.2276325 C19.4305871,15.4245164 18.4851476,14.7246377 17.6316246,14.7246377 L6.3530098,14.7246377 C5.4959645,14.7246377 4.55444948,15.4231177 4.32314478,16.2276325 L2.75521062,21.6811594 L2.65068631,22.0289855 L21.3185825,22.0289855 L21.1127477,21.3339312 Z">
+                                </path>
+                            </svg>
+                            Sign In
+                        </a>
+                    </div>
+                    <div class="cart orange"><a>
+                            <svg class="_1GTCc3" viewBox="-1 0 37 32" height="20" width="20" fill="#686b78">
+                                <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
+                            </svg>
+                            <span class="_2vS77">0</span> Cart
+                        </a></li>
+                    </div>
+                </div>
+            </div>
     </header>
-    <div class="main1">
-        <div class="web1">
-            <div class="head2">
-                <span id="home"> Home </span>
-                <span class="slash"> / </span>
-                <span id="home"> Banglore </span>
-                <span class="slash"> / </span>
-                <span id="home"> BTM - Banglore </span>
-                <span class="slash"> / </span>
-                <span class="NAME1"> Kitchens of Punjab</span>
+    <div class="restaurantcontent">
+        <div class="main1">
+            <div class="web1">
+                <div class="head2">
+                    <span class="home head3"> Home </span>
+                    <span class="slash head3"> / </span>
+                    <span class="home head3"> Banglore </span>
+                    <span class="slash head3"> / </span>
+                    <span class="home head3"> BTM - Banglore </span>
+                    <span class="slash head3"> / </span>
+                    <span class="NAME1 head3"> Kitchens of Punjab</span>
+                </div>
+            </div>
+            <div class="lgo">
+                <div class="lgo1">
+
+                    <div class="subg0">
+                        <div class="subg">
+                            <img class="subgimg" width="254" height="165" alt=""
+                                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/y2y8vkvvgpdu4nkxx5uj">
+                        </div>
+                    </div>
+                    <div class="KOPin">
+                        <div class="board0">
+                            <div class="board">
+                                <div class="kop0">
+                                    <div class="kop1"> Kitchens of Punjab </div>
+                                </div>
+                                <div class="pun0">
+                                    <div class="pun1"> Punjabi, North Indian </div>
+                                </div>
+                                <div class="Bil0">
+                                    <div class="Bil1">Bilekahalli, BTM - Bangalore</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rat">
+                            <div class="rat0 fr">
+                                <div class="rat1"><span><span class="icon-star"></span>4.2</span></div>
+                                <div class="rat2"><span>100+ Ratings</span></div>
+                            </div>
+                            <div class="rat0 fr1">
+                                <div class="rat1"><span>-- mins</span></div>
+                                <div class="rat2">Delivery Time</div>
+                            </div>
+                            <div class="rat0 fr2">
+                                <div class="rat1"><span>₹ 500
+                                    </span></div>
+                                <div class="rat2">Cost for two</div>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <div class="search1">
+                                <div class="search2">
+                                    <span class="srchsym"> ? </span>
+                                    <span class="srchmn">
+                                        <input type="text" placeholder="Search for dishes..." class="srchpl"
+                                            style="font-weight: 600;">
+                                    </span>
+                                </div>
+                                <div class="search3">
+                                    <span class="searchx"> <input type="checkbox"> Veg Only </span>
+                                </div>
+                                <div class="search4">
+                                    <div class="search5">
+                                        <span class="favicn">&&</span> <span>Favourite</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="offer0">
+                        <div class="offer1"> Offer</div>
+                        <div class="offer2">
+                            <div class="offe">
+                                <div class="offer3 off2e">
+                                    <div class="officn off3c">**</div>
+                                    <div class="off3rst off3c">
+                                        <span class="spbre">60% off up to ₹120</span><span>Use code TRYNEW</span>
+                                    </div>
+                                </div>
+                                <div class="offer5 off2e">
+                                    <div class="officn2 off3c">**</div>
+                                    <div class="off5rst off3c">
+                                        <span class="spbre">25% off</span><span>Use code PARTY</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="lgo">
-            <div class="subg0">
-                <div class="subg">
-                    <img class="subgimg" width="254" height="165" alt=""
-                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/y2y8vkvvgpdu4nkxx5uj">
-                </div>
-            </div>
-            <div class="board0">
-                <div class="board">
-                    <div class="kop0">
-                        <div class="kop1"> Kitchens of Punjab </div>
-                    </div>
-                    <div class="pun0">
-                        <div class="pun1"> Punjabi, North Indian </div>
-                    </div>
-                    <div class="Bil0">
-                        <div class="Bil1">Bilekahalli, BTM - Bangalore</div>
-                    </div>
-                </div>
-            </div>
-            <div class="rat">
-                <div class="rat0 fr">
-                    <div class="rat1"><span><span class="icon-star"></span>4.2</span></div>
-                    <div class="rat2"><span>100+ Ratings</span></div>
-                </div>
-                <div class="rat0 fr1">
-                    <div class="rat1"><span>-- mins</span></div>
-                    <div class="rat2">Delivery Time</div>
-                </div>
-                <div class="rat0 fr2">
-                    <div class="rat1"><span>₹ 500
-                        </span></div>
-                    <div class="rat2">Cost for two</div>
-                </div>
-            </div>
-            <div class="offer0">
-                <div class="offer1"> Offer</div>
-                <div class="offer2">
-                    <div class="offe">
-                        <div class="offer3 off2e">
-                            <div class="officn off3c">**</div>
-                            <div class="off3rst off3c">
-                                <span class="spbre">60% off up to ₹120</span><span>Use code TRYNEW</span>
-                            </div>
-                        </div>
-                        <div class="offer5 off2e">
-                            <div class="officn2 off3c">**</div>
-                            <div class="off5rst off3c">
-                                <span class="spbre">25% off</span><span>Use code PARTY</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="search">
-        <div class="search1">
-            <div class="search2">
-                <span class="srchsym"> ? </span>
-                <span class="srchmn">
-                    <input type="text" placeholder="Search for dishes..." class="srchpl" style="font-weight: 600;">
-                </span>
-            </div>
-            <div class="search3">
-                <span class="searchx"> <input type="checkbox"> Veg Only </span>
-            </div>
-            <div class="search4">
-                <div class="search5">
-                    <span class="favicn">&&</span> <span>Favourite</span>
-                </div>
-            </div>
-        </div>
 
-    </div>
-    <div class="menu">
-        <div class="menu0">
-            <div class="varieties">
-                <ul class="varieties1">
-                    <li> Recommended </li>
-                    <li> Platters </li>
-                    <li> Starters </li>
-                    <li> Family Binge Packs </li>
-                    <li> Main course </li>
-                    <li> Rice & Indian Breads</li>
-                    <li> Premium Thails </li>
-                    <li> Desserts & Beverages </li>
-                    <li> Accompaniments </li>
+        <div class="menu">
 
-                </ul>
-            </div>
-            <div class="menuim">
-                <div class="menunm">
-                    <div class="menunm0">
-                        Recommended </div>
-                </div>
-                <div class="menuim1">
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im01" class="m1im1" loading="lazy"
-                                    width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
 
-                        </div>
+            <ul id="varieties"></ul>  <!-- From Javascript-->
 
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im02" class="m1im1" loading="lazy"
-                                    width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im03" class="m1im1" loading="lazy"
-                                    width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im04" class="m1im1" loading="lazy"
-                                    width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im05" class="m1im1" width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im06" class="m1im1" width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="m1 menuimc">
-                        <div class="m01">
-                            <div class="m1in">
-                                <div class="m1in1">Veg</div>
-                                <div class="m1in2">Veg Hot & Sour Soup</div>
-                                <div class="m1in3">₹ 125</div>
-                            </div>
-                            <div class="m1im">
-                                <img alt="Veg Hot &amp; Sour Soup" id="m1im07" class="m1im1" width="118px" height="96px"
-                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
+            <div id="menuim"></div> <!-- From Javascript-->
             <div class="filler">
-                <div class="filler0">
                     <div class="CE">Cart Empty</div>
                     <img src="Cart_empty_-_menu_2x_ejjkf2.png" height="212px" width="278" clas="ceimg">
                     <div class="CE2">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
-                </div>
             </div>
+            <script src="content.js"></script>
+
         </div>
-    </div>
-    <div class="footer0">
-        <div class="footer1">
-            <div class="foin">
-                <div class="foin1">
-                    <div class="addfoo">ADDRESS</div>
-                    <div class="addfoo1"></div>
-                    <div class="addfoo2">Relish, 1st Floor, Shivam Arcade, Opposite Nirman Tower, R C Technical Road,
-                        Chanakyapuri, Ghatlodia, Ahmedabad</div>
-                </div>
-                <div class="foin2">
-                    <div class="cui1">CUISINES</div>
-                    <div class="cui2"></div>
-                    <div class="cui3">Indian</div>
+        <div class="footer0">
+            <div class="footer1">
+                <div class="foin">
+                    <div class="foin1">
+                        <div class="addfoo">ADDRESS</div>
+                        <div class="addfoo1"></div>
+                        <div class="addfoo2">Relish, 1st Floor, Shivam Arcade, Opposite Nirman Tower, R C Technical
+                            Road,
+                            Chanakyapuri, Ghatlodia, Ahmedabad</div>
+                    </div>
+                    <div class="foin2">
+                        <div class="cui1">CUISINES</div>
+                        <div class="cui2"></div>
+                        <div class="cui3">Indian</div>
+
+                    </div>
 
                 </div>
+                <div class="footlic"> Lincense No. 22717105000867</div>
 
             </div>
-            <div class="footlic"> Lincense No. 22717105000867</div>
-
         </div>
     </div>
 </body>
