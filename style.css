@@ -2,12 +2,13 @@
 
 body {
             
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     margin:0px 0px;
     width: 100%;
 
 }
+
 
 .head {
 
@@ -31,7 +32,7 @@ body {
 
 .loc {
     display: inline-block;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     font-size: 14px;
     flex:10;
@@ -136,9 +137,10 @@ body {
 
 
 .orange:hover {
-    color: #fc8019;
+    color: #fc8019 !important;
     cursor: pointer;
-    fill: #fc8019;
+    fill: #fc8019 !important;
+   
     
 }
 .help {
@@ -194,160 +196,110 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: #3d4152;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     position: relative;
     left: -10px;
 
 
 }
-.main1 
-{
-    
-}
+
 
 .head2 {
 
-    height: 30px;
-    width: max-content;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     font-size: 10px;
     color: #93959f;
-    align-items: center;
     font-weight: 400;
-    margin : 0px auto 0px 266px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    
-   
-
+    justify-content :flex-start;
+    min-width: max-content;
+    padding-left: 270px;
+    min-width: 1200px;
+    background-color: rgb(247, 246, 246);
 }
+
 .head3 {
-    
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 2px;
     margin-right: 2px;
-}
-
-.web1 {
-    background-color: rgb(247, 246, 246);
-    height: 30px;
-    width: 1728px;
-    max-width: 1728px;
-    
-
 
 }
 
 .NAME1 {
     color: #535665;
+    
 }
 
 .lgo {
 
-    height: 245px;
-    width: 1728px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:center ;
     background-color: #272324;
     color: #ffffff;
     
 }
-.lgo1
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 69.45%;
-    height: 100%;
-    margin: 0px auto;
-    
 
-}
-
-.subg0 {
-    
-    width: 254px;
-    height: 245px;
-
-}
 
 .subg {
     
-   width: 100%;
-   height: 165px;
-   margin-top: 40px;
+     margin-top: 5px;
 }
 .KOPin {
-    width: 538px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    
     margin-left: 55px;
     margin-right: 55px;
+    min-width: 558px;
 }
-.board0 {
-    height: 123px;
- }
-.board {
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;    
-height: 100%;
-justify-content: flex-end;
-   
+.board 
+{
+     margin:  30px 0px 30px 0px;
 }
+
 
 .kop0 {
-    width: 538px;
-    height: 38.4px;
-    margin: 5px 0px;
-
-}
-
-.kop1 {
-    width: max-content;
-    height: 38.4px;
-    font-weight: lighter;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    
+    margin: 10px 0px;
+    font-weight: 100;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     font-size: 32px;
-   
- 
-   
 }
 
 .pun0 {
     
-    top: -20px;
-    left: 20px;
+    
     opacity: .7;
     font-size: 15px;
     font-weight: 300;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 .Bil0 {
     
-    top: -10px;
-    left: 20px;
+   
     opacity: .7;
     font-size: 15px;
     font-weight: 300;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 .rat {
     
    
-    width: max-content;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+   
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     margin: 9px 0px;
 
@@ -401,7 +353,7 @@ justify-content: flex-end;
    justify-content: center;
     width: 298px;
     height: 251px;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     font-size: 14px;
 }
@@ -427,10 +379,7 @@ justify-content: flex-end;
     display: inline;
 }
 
-.offer5 {
-    
-    
-}
+
 
 .offer1 {
     font-size: 20px;
@@ -454,59 +403,44 @@ justify-content: flex-end;
 }
 
 .search {
-
     
-   
-    width: 538px;
-    height: 40px;
-    vertical-align: middle;
-    text-align: center;
-    padding-right: 15px;
-    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-    letter-spacing: 0;
-    color: #3d4152;
-}
-.search1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    font-family: ProximaNova, sans-serif, Helvetica Neue;
+    letter-spacing: 0;
+    color: #3d4152;
 }
-.search2 {
+.search1{
     background-color: #ffffff;
-    height: 40px;
-    width: 254px;
-
+    margin: 25px 25px 5px 0px;
+    padding: 10px 30px;
 
 }
-
-input.srchpl {
-    border: #fff;
+.srchpl
+{
+    border: none;
 }
 
-.search3 {
+.search2{
     
    
     background-color: white;
-    height: 40px;
-    width: 116px;
     font-size: 14px;
     font-weight: 600;
+    margin: 25px 25px 5px 0px;
+    padding: 10px 20px;
+
 }
 
-.search4 {
-    
-  
+
+
+.search3 {
     background-color: white;
-    height: 40px;
-    width: 122px;
-}
-
-.search5 {
     font-size: 14px;
     font-weight: 600;
-    vertical-align: middle;
-    
-    
+    margin: 25px 25px 5px 0px;
+    padding: 10px 20px;
 }
 
 .menu {
@@ -530,7 +464,20 @@ input.srchpl {
 #varieties > li 
 {
      margin : 10px 0px 0px 310px;
+     text-decoration: none;
+
 } 
+.ListSection
+{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.ListSection:hover
+{
+    color: #fc8019 !important; 
+    cursor: pointer;
+    font-weight: 300;
+}
 
 .itemFull
 {
@@ -592,6 +539,7 @@ input.srchpl {
 flex :2.7;
 min-width: 538px;
 border-left: 0.5px solid rgb(180, 180, 180);
+
 }
 .menufull
 {
@@ -625,40 +573,120 @@ border-left: 0.5px solid rgb(180, 180, 180);
 
 
 .footer0 {
-    background-color: #fc8019;
-    font-weight: 300;
-    width: 1728px;
-    height: max-content;
+    
+    
     color: #282c3f;
-
-}
-
-.footer1 {
-    background-color: #bcc5ba;
+    background-color: #e9e9eb;
+    
 
 }
 
 .foin {
     display: flex;
     flex-direction: row;
-    width: 1200px;
+    
     
    
 }
 
 .foin1 {
     flex: 1;
-    height: 123px;
     text-align: center;
+    padding: 60px 0px 60px 0px; 
+    min-width: 864px;
 }
 
 .foin2 {
     flex: 1;
-    height: 123px;
     text-align: center;
-
+    padding: 60px 0px 60px 0px; 
+    min-width: 600px;
 }
 
+.addfoo
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+.addfoo1
+{   width: 24px;
+    height: 3px;
+    margin: 18px auto 30px;
+    background-color: #686b78;;
+}
+.addfoo2 
+{
+    color: #686b78;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0px 270px;
+}
+.cui1
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+.cui2
+{   width: 24px;
+    height: 3px;
+    margin: 18px auto 30px;
+    background-color: #686b78;;
+}
+.cui3
+{
+    color: #686b78;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0px 270px;
+}
 .footlic {
     text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #686b78;
+}
+.footimg
+{
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+}
+.footerWeb
+{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.FWimage
+{
+    
+    margin: 20px 0px 20px 100px;
+}
+.FWcr
+{  
+    color:white;
+    margin: 20px 385px 20px 430px;
+    font-size: 20px;
+    letter-spacing: -.6px;
+    font-weight: 300;
+}
+.FWsocial
+{
+    margin: 20px 100px 20px 100px;
+
+}
+.facebook 
+{ 
+    margin-right: 15px;
+} 
+.pinterest 
+{
+    margin-right: 15px;
+} 
+.insta
+{
+    margin-right: 15px;
 }
