@@ -112,24 +112,28 @@ let Menu =
 }
 ] 
 
-function one(menu) 
+function createHtmlSections(menu) 
 { 
     let htmlSectionList = document.getElementById('varieties');
      for( let section of menu)
      {  
-
-        let sectionElement = document.createElement('li');
+        let sectionElement0 = document.createElement('li');
+        let sectionElement = document.createElement('a');
         sectionElement.textContent= section.sectionName;
         sectionElement.id = section.sectionId;
-        htmlSectionList.appendChild(sectionElement);
-        two(section);
+        sectionElement.href="#"+ section.sectionId + "cursor";
+        sectionElement.className = "ListSection"
+        sectionElement0.appendChild(sectionElement);
+        htmlSectionList.appendChild(sectionElement0);
+        createHtmlItemMenu(section);
      }
     
 };
 
-function two(section)
+function createHtmlItemMenu(section)
 {   let itemList = document.createElement('div'); // Section wise ItemList  
         itemList.className = 'menufull';
+        itemList.id =section.sectionId + "cursor";
     let sectionNAME = document.createElement('div');
     sectionNAME.textContent = section.sectionName;
     sectionNAME.id = section.sectionId + "Menu";
@@ -180,6 +184,6 @@ function two(section)
     
 };
 
-one(Menu);
+createHtmlSections(Menu);
 document.getElementById('varieties');
 console.log()
