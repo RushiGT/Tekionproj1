@@ -244,15 +244,16 @@ body {
     align-items:center ;
     background-color: #272324;
     color: #ffffff;
-    
+    position: sticky;
+    top:0px;
+    z-index: 50;
 }
-
 
 .subg {
     
      margin-top: 5px;
 }
-.KOPin {
+.restauin {
     
     margin-left: 55px;
     margin-right: 55px;
@@ -264,7 +265,7 @@ body {
 }
 
 
-.kop0 {
+.restau {
     
     margin: 10px 0px;
     font-weight: 100;
@@ -273,7 +274,7 @@ body {
     font-size: 32px;
 }
 
-.pun0 {
+.speciality {
     
     
     opacity: .7;
@@ -284,7 +285,7 @@ body {
     margin: 10px 0px;
 }
 
-.Bil0 {
+.address {
     
    
     opacity: .7;
@@ -459,12 +460,18 @@ body {
     color: #282c3f;
     font-size: 15px;
     margin : 50px auto;
+    align-self: flex-start;
+    position: sticky;
+    top:318.5px;
+   
     
 } 
 #varieties > li 
 {
      margin : 10px 0px 0px 310px;
+     padding-right: 30px;
      text-decoration: none;
+     text-align: end;
 
 } 
 .ListSection
@@ -524,9 +531,7 @@ body {
 {
     font-weight: 300;
     color: rgba(40,44,63,.45);
-    font-size: 14px;
-    
-
+    font-size: 14px;  
 }
 .itemimage 
 {
@@ -548,19 +553,36 @@ border-left: 0.5px solid rgb(180, 180, 180);
     margin-right: 85px;
     border-bottom: 2px solid black;
 }
+.Last
+{
+    border: none;
+}
 .filler {
     flex: 2.3;
     height: max-content;
-
+    align-self: flex-start;
+    position: sticky;
+    top:0px;
+    align-self: flex-start;
+    position: sticky;
+    top: 318.5px;
+    margin-top: 50px;
 }
+
 
 .CE {
     
     
-    font-weight: 300;
+    font-weight: 500;
     color: #7e808c;
     letter-spacing: -.3px;
     font-size: 32px;
+    
+}
+
+.ceimg
+{
+    margin-top: 47px;
 }
 
 .CE2 { 
@@ -568,6 +590,8 @@ border-left: 0.5px solid rgb(180, 180, 180);
     font-size: 16px;
     font-weight: 300;
     width: 218px;
+    margin-top: 15px;
+    
 }
 
 

@@ -1,189 +1,250 @@
-let Menu =
-[
-    {   sectionId : "recommended",
-        sectionName : "Recommended",
-        sectionContent  : [
-            {   
-                itemId : "vegPlatter",
-                itemName :  "Veg Platter",
-                itemPrice : 120,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : "Veg"
+let KOP = 
+        {   RestName : "Kitchens of Punjab",
+            Speciality : "Punjabi, North Indian",
+            Address : "Bilekahalli, BTM - Bangalore",
+            Ratings : 4.2 , 
+            UsersRat : "100+ Ratings",
+            DeliveryTime : '--',
+            Exclusive : {
+                            Price : 500 ,
+                            People : "Cost for two"
+                        } ,
+            Menu: [
+                {
+                    sectionId: "recommended",
+                    sectionName: "Recommended",
+                    sectionContent: [
+                        {
+                            itemId: "vegPlatter",
+                            itemName: "Veg Platter",
+                            itemPrice: 120,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-            },
-            {   
-                itemId : "vegPlatter2",
-                itemName :  "Veg Platter2",
-                itemPrice : 130,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : " Non Veg"
+                        },
+                        {
+                            itemId: "vegPlatter2",
+                            itemName: "Veg Platter2",
+                            itemPrice: 130,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: " Non Veg"
 
-            },
-            {   
-                itemId : "vegPlatter3",
-                itemName :  "Veg Platter3",
-                itemPrice : 140,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : "Veg"
+                        },
+                        {
+                            itemId: "vegPlatter3",
+                            itemName: "Veg Platter3",
+                            itemPrice: 140,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-            }            
+                        }
 
-        ]
-    },
+                    ]
+                },
 
-    {   sectionId : "platters",
-        sectionName : "Platters",
-        sectionContent  : [
-            {   
-                itemId : "vegPlatter4",
-                itemName :  "Veg Platter4",
-                itemPrice : 120,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : "Veg"
+                {
+                    sectionId: "platters",
+                    sectionName: "Platters",
+                    sectionContent: [
+                        {
+                            itemId: "vegPlatter4",
+                            itemName: "Veg Platter4",
+                            itemPrice: 120,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-            },
-            {   
-                itemId : "vegPlatter5",
-                itemName :  "Veg Platter5",
-                itemPrice : 130,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : " Non Veg"
+                        },
+                        {
+                            itemId: "vegPlatter5",
+                            itemName: "Veg Platter5",
+                            itemPrice: 130,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: " Non Veg"
 
-            },
-            {   
-                itemId : "vegPlatter6",
-                itemName :  "Veg Platter6",
-                itemPrice : 140,
-                itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                itemType : "Veg"
+                        },
+                        {
+                            itemId: "vegPlatter6",
+                            itemName: "Veg Platter6",
+                            itemPrice: 140,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-            }            
+                        }
 
-        ]
-    },
-    {   sectionId : "familyPack",
-    sectionName : "Family Pack",
-    sectionContent  : [
-        {   
-            itemId : "vegPlatter7",
-            itemName :  "Veg Platter7",
-            itemPrice : 120,
-            itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-            itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-            itemType : "Veg"
+                    ]
+                },
+                {
+                    sectionId: "familyPack",
+                    sectionName: "Family Pack",
+                    sectionContent: [
+                        {
+                            itemId: "vegPlatter7",
+                            itemName: "Veg Platter7",
+                            itemPrice: 120,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-        },
-        {   
-            itemId : "vegPlatter8",
-            itemName :  "Veg Platter8",
-            itemPrice : 130,
-            itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-            itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-            itemType : " Non Veg"
+                        },
+                        {
+                            itemId: "vegPlatter8",
+                            itemName: "Veg Platter8",
+                            itemPrice: 130,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: " Non Veg"
 
-        },
-        {   
-            itemId : "vegPlatter9",
-            itemName :  "Veg Platter9",
-            itemPrice : 140,
-            itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-            itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-            itemType : "Veg"
+                        },
+                        {
+                            itemId: "vegPlatter9",
+                            itemName: "Veg Platter9",
+                            itemPrice: 140,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-        },
-        {   
-            itemId : "vegPlatter10",
-            itemName :  "Veg Platter10",
-            itemPrice : 140,
-            itemImage : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-            itemInfo :  "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-            itemType : "Veg"
+                        },
+                        {
+                            itemId: "vegPlatter10",
+                            itemName: "Veg Platter10",
+                            itemPrice: 140,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: "Veg"
 
-        }            
+                        }
 
 
-    ]
-}
-] 
+                    ]
+                }
+            ]
+        };
+function createHtmlheader(KOP)
+{
+   let Board = document.getElementsByClassName('board')[0];
+   let restau = document.createElement('div');
+   restau = updateHtmlElement(restau,'restau','','','',KOP.RestName);
+   let speciality = document.createElement('div');
+   speciality = updateHtmlElement(speciality, 'speciality','','','',KOP.Speciality);
+   let address = document.createElement('div');
+   address = updateHtmlElement(address,'address','','','',KOP.Address);
+   Board = appendChild2(Board,[restau,speciality,address]);
 
-function createHtmlSections(menu) 
-{ 
+
+
+};
+
+function createHtmlSections(menu) {
+    let flag = 0;
     let htmlSectionList = document.getElementById('varieties');
-     for( let section of menu)
-     {  
+    for (let section of menu) {
         let sectionElement0 = document.createElement('li');
         let sectionElement = document.createElement('a');
-        sectionElement.textContent= section.sectionName;
-        sectionElement.id = section.sectionId;
-        sectionElement.href="#"+ section.sectionId + "cursor";
-        sectionElement.className = "ListSection"
+        sectionElement = updateHtmlElement(sectionElement, "ListSection", section.sectionId, '', '', section.sectionName);
         sectionElement0.appendChild(sectionElement);
         htmlSectionList.appendChild(sectionElement0);
-        createHtmlItemMenu(section);
-     }
-    
+        if (menu[menu.length - 1] === section) {
+            flag = 1;
+        }
+        createHtmlItemMenu(section, flag);
+        flag = 0;
+    }
 };
 
-function createHtmlItemMenu(section)
-{   let itemList = document.createElement('div'); // Section wise ItemList  
-        itemList.className = 'menufull';
-        itemList.id =section.sectionId + "cursor";
+function createHtmlItemMenu(section, flag) {
+    let itemList = document.createElement('div'); // Section wise ItemList  
+    itemList = updateHtmlElement(itemList, 'menufull', section.sectionId + "cursor");
+    if (flag === 1) {
+        itemList.className = 'menufull Last';
+    }
     let sectionNAME = document.createElement('div');
-    sectionNAME.textContent = section.sectionName;
-    sectionNAME.id = section.sectionId + "Menu";
-    sectionNAME.className = 'sectionfull';
+    sectionNAME = updateHtmlElement(sectionNAME, 'sectionfull', section.sectionId + "Menu", '', '', section.sectionName);
     let sectionSize = document.createElement('div');
-    sectionSize.textContent = section.sectionContent.length+ " items";
-    sectionSize.id = section.sectionId + "Size";
-    sectionSize.className = 'sizefull';
-    itemList.appendChild(sectionNAME);
-    itemList.appendChild(sectionSize);
-    for(let item of section.sectionContent)
-    {    let Item = document.createElement('div');
-        Item.id= item.itemId;
-        Item.className = 'itemFull';
+    sectionSize = updateHtmlElement(sectionSize, 'sizefull', section.sectionId + "Size", '', '', section.sectionContent.length + " items");
+    itemList = appendChild2(itemList, [sectionNAME, sectionSize]);
+    for (let item of section.sectionContent) {
+        let Item = document.createElement('div');
+        Item = updateHtmlElement(Item, 'itemFull', item.itemId);
         let itemMenu = document.createElement('div');
         let itemimage = document.createElement('div');
-        itemMenu.id = item.itemId+"menu";
-        itemimage.id = item.itemId+"image";
+        itemMenu = updateHtmlElement(itemMenu, '', item.itemId + "menu");
+        itemimage = updateHtmlElement(itemimage, '', item.itemId + "image");
         let itemtype = document.createElement('div');
-        itemtype.textContent = item.itemType;
-        itemtype.className = item.itemType;
-
-        let itemname= document.createElement('div');
-        itemname.textContent = item.itemName;
-        itemname.className = 'itemvalue';
-        
+        itemtype = updateHtmlElement(itemtype, item.itemType, '', '', '', item.itemType);
+        if (section.sectionContent[section.sectionContent.length - 1] === item) {
+            Item.className = 'itemFull Last';
+        }
+        let itemname = document.createElement('div');
+        itemname = updateHtmlElement(itemname, 'itemvalue', '', '', '', item.itemName);
         let iteminfo = document.createElement('div');
-        iteminfo.textContent = item.itemInfo;
-        iteminfo.className = 'iteminfo';
+        iteminfo = updateHtmlElement(iteminfo, 'iteminfo', '', '', '', item.itemInfo);
         let image = document.createElement('img');
-        image.src=item.itemImage;
-        image.className = 'itemimage'; 
-
+        image = updateHtmlElement(image, 'itemimage', '', '', item.itemImage);
         let price = document.createElement('div');
-        price.textContent= item.itemPrice;
-        price.className = 'itemprice'; 
-        itemMenu.appendChild(itemtype);
-        itemMenu.appendChild(itemname);
-        itemMenu.appendChild(price);
-        itemMenu.appendChild(iteminfo);
+        price = updateHtmlElement(price, 'itemprice', '', '', '', item.itemPrice);
+        itemMenu = appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
         itemimage.appendChild(image);
-        Item.appendChild(itemMenu);
-        Item.appendChild(itemimage);
+        Item = appendChild2(Item, [itemMenu, itemimage]);
         itemList.appendChild(Item);
     }
-     let itemhtmllist = document.getElementById('menuim');
-     itemhtmllist.appendChild(itemList);
-    
+    let itemhtmllist = document.getElementById('menuim');
+    itemhtmllist.appendChild(itemList);
+
 };
 
-createHtmlSections(Menu);
-document.getElementById('varieties');
-console.log()
+/////
+function updateHtmlElement(Element, Class, ID, Href, Src, TextContent) {
+    if (Class !== '') {
+        Element.className = Class;
+    }
+    if (ID !== '') {
+        Element.id = ID;
+    }
+    if (Href !== '') {
+        Element.href = Href;
+    }
+    if (Src !== '') {
+        Element.src = Src;
+    }
+    if (TextContent !== '') {
+        Element.textContent = TextContent;
+    }
+    return Element;
+};
+
+///////
+let appendChild2 = function (parent, children) {
+    for (let child of children) {
+        parent.appendChild(child);
+    }
+    return parent;
+};
+
+function sectionScroll()
+{
+    const link = document.querySelectorAll('.ListSection');
+   
+    link.forEach((item)=>{
+       
+        item.addEventListener("click", ()=> 
+        {
+                let element = document.getElementById(item.getAttribute('id') + "cursor");
+                element.scrollIntoView({
+                    behavior : "smooth",
+                });
+        }
+        )
+
+    });
+} 
+/////
+createHtmlheader(KOP);
+createHtmlSections(KOP.Menu);
+sectionScroll();
+
