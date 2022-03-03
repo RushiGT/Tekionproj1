@@ -146,12 +146,18 @@ function createHtmlSections(menu) {
     for (let section of menu) {
         let sectionElement0 = document.createElement('li');
         let sectionElement = document.createElement('a');
-        sectionElement = updateHtmlElement(sectionElement, "ListSection", section.sectionId, '', '', section.sectionName);
+        sectionElement = updateHtmlElement(sectionElement, "ListSection", section.sectionId, "#"+section.sectionId+ "cursor", '', section.sectionName);
+        if(menu[0]===section)
+        {
+             sectionElement0.className= "activate";
+        }
+        sectionElement0.id =section.sectionId+ "cursor1";
         sectionElement0.appendChild(sectionElement);
         htmlSectionList.appendChild(sectionElement0);
         if (menu[menu.length - 1] === section) {
             flag = 1;
         }
+        
         createHtmlItemMenu(section, flag);
         flag = 0;
     }
@@ -226,7 +232,7 @@ let appendChild2 = function (parent, children) {
     return parent;
 };
 
-function sectionScroll()
+/*function sectionScroll()
 {
     const link = document.querySelectorAll('.ListSection');
    
@@ -243,8 +249,31 @@ function sectionScroll()
 
     });
 } 
+*/
+function highlighter()
+{
+
+const menus = document.querySelectorAll(".menufull");
+window.addEventListener("scroll", () => {
+   menus.forEach((menu)=>{
+       let position = menu.getBoundingClientRect();
+       
+       let section = document.getElementById(menu.id + '1');
+       //console.log(section);
+    
+       if(position.top<=400 && position.top>=400-position.height) {
+		section.classList.add('activate');
+	    }
+        else 
+        {
+           section.classList.remove('activate');
+        }
+   })
+});
+} 
 /////
 createHtmlheader(KOP);
 createHtmlSections(KOP.Menu);
-sectionScroll();
+highlighter();
+//sectionScroll();
 

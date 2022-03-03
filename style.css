@@ -1,12 +1,15 @@
 
-
+html 
+{
+     
+     scroll-padding-top: 268.5px;
+} 
 body {
             
     font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     margin:0px 0px;
     width: 100%;
-
 }
 
 
@@ -477,7 +480,8 @@ body {
 .ListSection
 {
     text-decoration: none !important;
-    color: inherit !important;
+    color : inherit;
+  
 }
 .ListSection:hover
 {
@@ -548,10 +552,12 @@ border-left: 0.5px solid rgb(180, 180, 180);
 }
 .menufull
 {
-     margin-top: 50px;
+     
+     padding-top: 50px;
     margin-left: 50px ;
     margin-right: 85px;
     border-bottom: 2px solid black;
+    
 }
 .Last
 {
@@ -714,3 +720,8 @@ border-left: 0.5px solid rgb(180, 180, 180);
 {
     margin-right: 15px;
 }
+
+.activate 
+{    color: #fc8019;
+     border-right: 2px solid #fc8019 ;
+} 
