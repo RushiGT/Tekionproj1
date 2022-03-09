@@ -143,8 +143,6 @@ body {
     color: #fc8019 !important;
     cursor: pointer;
     fill: #fc8019 !important;
-   
-    
 }
 .help {
     flex:1; 
@@ -195,7 +193,6 @@ body {
 
 ._2vS77 {
 
-    transform: translate(-50%, -50%);
     font-size: 14px;
     font-weight: 600;
     color: #3d4152;
@@ -221,7 +218,6 @@ body {
     justify-content :flex-start;
     min-width: max-content;
     padding-left: 270px;
-    min-width: 1200px;
     background-color: rgb(247, 246, 246);
 }
 
@@ -250,6 +246,7 @@ body {
     position: sticky;
     top:0px;
     z-index: 50;
+    min-width: 100%;
 }
 
 .subg {
@@ -454,6 +451,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     background-color: #f9f9f9;
+    min-width: fit-content;
 
 }
 #varieties {
@@ -550,6 +548,11 @@ min-width: 538px;
 border-left: 0.5px solid rgb(180, 180, 180);
 
 }
+
+#menuim :last-child 
+{
+    border: none;
+}
 .menufull
 {
      
@@ -559,10 +562,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     border-bottom: 2px solid black;
     
 }
-.Last
-{
-    border: none;
-}
+
 .filler {
     flex: 2.3;
     height: max-content;
@@ -607,7 +607,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     
     color: #282c3f;
     background-color: #e9e9eb;
-    
+    min-width: fit-content;
 
 }
 
@@ -675,10 +675,12 @@ border-left: 0.5px solid rgb(180, 180, 180);
     font-weight: 500;
     line-height: 1.5;
     color: #686b78;
+    min-width: max-content;
 }
 .footimg
 {
     text-align: center;
+    min-width: fit-content;
     margin: 0px 0px 20px 0px;
 }
 .footerWeb
@@ -689,6 +691,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    min-width: max-content;
 }
 .FWimage
 {
@@ -702,10 +705,12 @@ border-left: 0.5px solid rgb(180, 180, 180);
     font-size: 20px;
     letter-spacing: -.6px;
     font-weight: 300;
+    min-width: max-content;
 }
 .FWsocial
 {
     margin: 20px 100px 20px 100px;
+    min-width: max-content;
 
 }
 .facebook 
@@ -725,3 +730,8 @@ border-left: 0.5px solid rgb(180, 180, 180);
 {    color: #fc8019;
      border-right: 2px solid #fc8019 ;
 } 
+
+.quantButton 
+{
+    display: inline-block;
+}

@@ -9,6 +9,16 @@ let KOP =
                             Price : 500 ,
                             People : "Cost for two"
                         } ,
+            Offers : [
+                        {   
+                            offer : "60% off up to ₹120",
+                            code : "Use code TRYNEW"
+                         }, 
+                        {
+                            offer : "25% off",
+                            code : "Use code PARTY"   
+                        }
+                    ],
             Menu: [
                 {
                     sectionId: "recommended",
@@ -33,6 +43,15 @@ let KOP =
 
                         },
                         {
+                            itemId: "vegPlatter11",
+                            itemName: "Veg Platter11",
+                            itemPrice: 134,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: " Non Veg"
+
+                        },
+                        {
                             itemId: "vegPlatter3",
                             itemName: "Veg Platter3",
                             itemPrice: 140,
@@ -40,7 +59,16 @@ let KOP =
                             itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
                             itemType: "Veg"
 
-                        }
+                        },
+                        {
+                            itemId: "vegPlatter12",
+                            itemName: "Veg Platter12",
+                            itemPrice: 139,
+                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                            itemType: " Non Veg"
+
+                        },
 
                     ]
                 },
@@ -135,13 +163,41 @@ function createHtmlheader(KOP)
    let address = document.createElement('div');
    address = updateHtmlElement(address,'address','','','',KOP.Address);
    Board = appendChild2(Board,[restau,speciality,address]);
+   let ratings1 = document.getElementsByClassName('rat1')[0];
+   let rat1 = document.createElement('span');
+   let rat2 = document.createElement('span');
+   rat2.className = "icon-star";
+   ratings1.appendChild(rat2);
+   rat1.textContent = KOP.Ratings;
+   ratings1.appendChild(rat1);
+   let ratings2 = document.getElementsByClassName('rat2')[0];
+    let rat3 = document.createElement('span');
+    rat3.textContent = KOP.UsersRat;
+    ratings2.appendChild(rat3);
 
+    
+    ratings1 = document.getElementsByClassName('rat1')[1];
+     rat1 = document.createElement('span');
+    rat1.textContent = KOP.DeliveryTime + " mins";
+    ratings1.appendChild(rat1);
+
+    ratings1 = document.getElementsByClassName('rat1')[2];
+    rat1 = document.createElement('span');
+   rat1.textContent = "₹ "+ KOP.Exclusive.Price ;
+   ratings1.appendChild(rat1);
+
+   ratings2 = document.getElementsByClassName('rat2')[2];
+   rat1 = document.createElement('span');
+   rat1.textContent = KOP.Exclusive.People ;
+   ratings2.appendChild(rat1);
+   
+   
 
 
 };
 
 function createHtmlSections(menu) {
-    let flag = 0;
+
     let htmlSectionList = document.getElementById('varieties');
     for (let section of menu) {
         let sectionElement0 = document.createElement('li');
@@ -154,21 +210,14 @@ function createHtmlSections(menu) {
         sectionElement0.id =section.sectionId+ "cursor1";
         sectionElement0.appendChild(sectionElement);
         htmlSectionList.appendChild(sectionElement0);
-        if (menu[menu.length - 1] === section) {
-            flag = 1;
-        }
-        
-        createHtmlItemMenu(section, flag);
-        flag = 0;
+        createHtmlItemMenu(section);
+
     }
 };
 
-function createHtmlItemMenu(section, flag) {
+function createHtmlItemMenu(section) {
     let itemList = document.createElement('div'); // Section wise ItemList  
     itemList = updateHtmlElement(itemList, 'menufull', section.sectionId + "cursor");
-    if (flag === 1) {
-        itemList.className = 'menufull Last';
-    }
     let sectionNAME = document.createElement('div');
     sectionNAME = updateHtmlElement(sectionNAME, 'sectionfull', section.sectionId + "Menu", '', '', section.sectionName);
     let sectionSize = document.createElement('div');
@@ -183,19 +232,18 @@ function createHtmlItemMenu(section, flag) {
         itemimage = updateHtmlElement(itemimage, '', item.itemId + "image");
         let itemtype = document.createElement('div');
         itemtype = updateHtmlElement(itemtype, item.itemType, '', '', '', item.itemType);
-        if (section.sectionContent[section.sectionContent.length - 1] === item) {
-            Item.className = 'itemFull Last';
-        }
         let itemname = document.createElement('div');
         itemname = updateHtmlElement(itemname, 'itemvalue', '', '', '', item.itemName);
         let iteminfo = document.createElement('div');
         iteminfo = updateHtmlElement(iteminfo, 'iteminfo', '', '', '', item.itemInfo);
         let image = document.createElement('img');
         image = updateHtmlElement(image, 'itemimage', '', '', item.itemImage);
+        let addbtn = document.createElement('button');
+        addbtn= updateHtmlElement(addbtn,'addbutton','','','',"ADD");
         let price = document.createElement('div');
         price = updateHtmlElement(price, 'itemprice', '', '', '', item.itemPrice);
         itemMenu = appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
-        itemimage.appendChild(image);
+        itemimage=appendChild2(itemimage,[image,addbtn]);
         Item = appendChild2(Item, [itemMenu, itemimage]);
         itemList.appendChild(Item);
     }
@@ -271,9 +319,77 @@ window.addEventListener("scroll", () => {
    })
 });
 } 
+function getPropertiesOfItem (btn)
+{
+   let itemElmnt = btn.parentElement.parentElement;
+    let itemInfoElmnt = itemElmnt.firstChild;
+    let itemPropertiesHtml = itemInfoElmnt.childNodes;
+    let properties = {};
+    properties.type = itemPropertiesHtml[0].innerHTML;
+    properties.itemName = itemPropertiesHtml[1].innerHTML;
+    properties.itemPrice = +itemPropertiesHtml[2].innerHTML;
+    properties.itemQuantity = 1;
+    return properties;
+
+}
+function updateAddbtn(btn)
+{
+   let parent = btn.parentElement;
+    btn.remove();
+   let minus = document.createElement('button');
+   let quantity = document.createElement('button');
+   let plus = document.createElement('button');
+   minus = updateHtmlElement(minus,"quantButton minus",'','','','-');
+   quantity = updateHtmlElement(quantity,"quantButton quantity",'','','','1'); 
+   plus = updateHtmlElement(plus,"quantButton plus",'','','','+');
+   parent = appendChild2(parent , [minus,quantity,plus]);
+}
+function updateCart(btn,properties)
+{
+    let filler0 = document.getElementById('filler0');
+    if(filler0.style.display !== 'none')
+    {
+        filler0.style.display = 'none';
+    }
+    let filler = document.getElementsByClassName('filler')[0];
+    let cartitem = document.createElement('div');
+    cartitem.className = "cartitem";
+    cartitem.id = properties.itemName + 'cart';
+    let cartItemName = document.createElement('span');
+    cartItemName.textContent = properties.itemName;
+    let cartItemtype = document.createElement('span');
+    cartItemtype.textContent = properties.type;
+    let cartItemPrice = document.createElement('span');
+    cartItemPrice.textContent = properties.itemPrice;
+
+
+    cartitem = appendChild2(cartitem,[cartItemtype,cartItemName,cartItemPrice]);
+   console.log(filler);
+    filler.appendChild(cartitem);
+
+
+}
+Cart = {}; 
+function addButtonImplementation(menu)
+{
+    let addbtns = document.querySelectorAll('.addbutton');
+    addbtns.forEach((btn)=>{
+        btn.addEventListener('click',()=>{
+           let properties= getPropertiesOfItem(btn);
+            let itemCartname = properties.itemName;
+            Cart[itemCartname] = properties ; 
+            updateAddbtn(btn);
+            updateCart(btn,properties);
+
+        })
+
+    });
+}
+
 /////
 createHtmlheader(KOP);
 createHtmlSections(KOP.Menu);
 highlighter();
+addButtonImplementation(KOP.Menu);
 //sectionScroll();
 
