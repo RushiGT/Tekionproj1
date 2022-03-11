@@ -98,8 +98,8 @@ body {
     flex-direction:row ;
     flex-wrap: nowrap;
     justify-content: right;
-    width: 100%;
-   height: 100%;
+    /* width: 100%;
+   height: 100%; */
    
 }
 
@@ -204,7 +204,10 @@ body {
 
 }
 
-
+.restaurantcontent 
+{
+    min-width: 1300px; 
+}
 .head2 {
 
     
@@ -216,7 +219,6 @@ body {
     display: flex;
     align-items: center;
     justify-content :flex-start;
-    min-width: max-content;
     padding-left: 270px;
     background-color: rgb(247, 246, 246);
 }
@@ -246,7 +248,7 @@ body {
     position: sticky;
     top:0px;
     z-index: 50;
-    min-width: 100%;
+    min-width: 1300px;
 }
 
 .subg {
@@ -348,12 +350,6 @@ body {
 
 .offer0 {
     
-   display: flex;
-   flex-direction: column ;
-   flex-wrap: nowrap;
-   justify-content: center;
-    width: 298px;
-    height: 251px;
     font-family: ProximaNova, sans-serif, Helvetica Neue;
     letter-spacing: 0;
     font-size: 14px;
@@ -361,33 +357,25 @@ body {
 
 .offer2 {
     border: 1px solid grey;
-    width: 298px;
-    height: 129px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 
 
-.off2e {
-    width: 227px;
-    height: 33.59px;
-}
 
 .off3c {
     display: inline;
 }
 
-
+.offe
+{
+    margin: 20px;
+}
 
 .offer1 {
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
-    width: max-content;
-    height: 34px;
     padding-right: 10px;
     z-index: 20;
     background-color: #272324;
@@ -451,7 +439,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     background-color: #f9f9f9;
-    min-width: fit-content;
+    min-width: 1300px;
 
 }
 #varieties {
@@ -607,7 +595,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     
     color: #282c3f;
     background-color: #e9e9eb;
-    min-width: fit-content;
+    min-width: 1300px;
 
 }
 
@@ -623,14 +611,14 @@ border-left: 0.5px solid rgb(180, 180, 180);
     flex: 1;
     text-align: center;
     padding: 60px 0px 60px 0px; 
-    min-width: 864px;
+    
 }
 
 .foin2 {
     flex: 1;
     text-align: center;
     padding: 60px 0px 60px 0px; 
-    min-width: 600px;
+    
 }
 
 .addfoo
@@ -675,12 +663,12 @@ border-left: 0.5px solid rgb(180, 180, 180);
     font-weight: 500;
     line-height: 1.5;
     color: #686b78;
-    min-width: max-content;
+   
 }
 .footimg
 {
     text-align: center;
-    min-width: fit-content;
+   
     margin: 0px 0px 20px 0px;
 }
 .footerWeb
@@ -691,7 +679,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    min-width: max-content;
+    min-width: 1300px;
 }
 .FWimage
 {
@@ -705,12 +693,12 @@ border-left: 0.5px solid rgb(180, 180, 180);
     font-size: 20px;
     letter-spacing: -.6px;
     font-weight: 300;
-    min-width: max-content;
+    
 }
 .FWsocial
 {
     margin: 20px 100px 20px 100px;
-    min-width: max-content;
+    
 
 }
 .facebook 
@@ -735,3 +723,4 @@ border-left: 0.5px solid rgb(180, 180, 180);
 {
     display: inline-block;
 }
+

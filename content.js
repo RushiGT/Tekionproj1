@@ -1,4 +1,6 @@
-let KOP = 
+(function ()
+{
+    let KOP = 
         {   RestName : "Kitchens of Punjab",
             Speciality : "Punjabi, North Indian",
             Address : "Bilekahalli, BTM - Bangalore",
@@ -153,15 +155,16 @@ let KOP =
                 }
             ]
         };
+        
 function createHtmlheader(KOP)
 {
    let Board = document.getElementsByClassName('board')[0];
    let restau = document.createElement('div');
-   restau = updateHtmlElement(restau,'restau','','','',KOP.RestName);
+   restau = updateHtmlElement(restau,{className:'restau',textContent : KOP.RestName});
    let speciality = document.createElement('div');
-   speciality = updateHtmlElement(speciality, 'speciality','','','',KOP.Speciality);
+   speciality = updateHtmlElement(speciality, {className:'speciality' ,textContent:KOP.Speciality});
    let address = document.createElement('div');
-   address = updateHtmlElement(address,'address','','','',KOP.Address);
+   address = updateHtmlElement(address,{className:'address',textContent :KOP.Address});
    Board = appendChild2(Board,[restau,speciality,address]);
    let ratings1 = document.getElementsByClassName('rat1')[0];
    let rat1 = document.createElement('span');
@@ -174,25 +177,18 @@ function createHtmlheader(KOP)
     let rat3 = document.createElement('span');
     rat3.textContent = KOP.UsersRat;
     ratings2.appendChild(rat3);
-
-    
     ratings1 = document.getElementsByClassName('rat1')[1];
      rat1 = document.createElement('span');
     rat1.textContent = KOP.DeliveryTime + " mins";
     ratings1.appendChild(rat1);
-
     ratings1 = document.getElementsByClassName('rat1')[2];
     rat1 = document.createElement('span');
    rat1.textContent = "₹ "+ KOP.Exclusive.Price ;
    ratings1.appendChild(rat1);
-
    ratings2 = document.getElementsByClassName('rat2')[2];
    rat1 = document.createElement('span');
    rat1.textContent = KOP.Exclusive.People ;
    ratings2.appendChild(rat1);
-   
-   
-
 
 };
 
@@ -202,7 +198,7 @@ function createHtmlSections(menu) {
     for (let section of menu) {
         let sectionElement0 = document.createElement('li');
         let sectionElement = document.createElement('a');
-        sectionElement = updateHtmlElement(sectionElement, "ListSection", section.sectionId, "#"+section.sectionId+ "cursor", '', section.sectionName);
+        sectionElement = updateHtmlElement(sectionElement, {className :"ListSection", iD : section.sectionId, href: "#"+section.sectionId+ "cursor", textContent: section.sectionName});
         if(menu[0]===section)
         {
              sectionElement0.className= "activate";
@@ -217,31 +213,31 @@ function createHtmlSections(menu) {
 
 function createHtmlItemMenu(section) {
     let itemList = document.createElement('div'); // Section wise ItemList  
-    itemList = updateHtmlElement(itemList, 'menufull', section.sectionId + "cursor");
+    itemList = updateHtmlElement(itemList, {className:'menufull', iD : section.sectionId + "cursor"});
     let sectionNAME = document.createElement('div');
-    sectionNAME = updateHtmlElement(sectionNAME, 'sectionfull', section.sectionId + "Menu", '', '', section.sectionName);
+    sectionNAME = updateHtmlElement(sectionNAME, {className:'sectionfull', iD : section.sectionId + "Menu", textContent: section.sectionName});
     let sectionSize = document.createElement('div');
-    sectionSize = updateHtmlElement(sectionSize, 'sizefull', section.sectionId + "Size", '', '', section.sectionContent.length + " items");
+    sectionSize = updateHtmlElement(sectionSize, {className : 'sizefull', iD : section.sectionId + "Size" ,textContent: section.sectionContent.length + " items"});
     itemList = appendChild2(itemList, [sectionNAME, sectionSize]);
     for (let item of section.sectionContent) {
         let Item = document.createElement('div');
-        Item = updateHtmlElement(Item, 'itemFull', item.itemId);
+        Item = updateHtmlElement(Item,{ className : 'itemFull', iD : item.itemId});
         let itemMenu = document.createElement('div');
         let itemimage = document.createElement('div');
-        itemMenu = updateHtmlElement(itemMenu, '', item.itemId + "menu");
-        itemimage = updateHtmlElement(itemimage, '', item.itemId + "image");
+        itemMenu = updateHtmlElement(itemMenu, { iD : item.itemId + "menu"});
+        itemimage = updateHtmlElement(itemimage, {iD : item.itemId + "image"});
         let itemtype = document.createElement('div');
-        itemtype = updateHtmlElement(itemtype, item.itemType, '', '', '', item.itemType);
+        itemtype = updateHtmlElement(itemtype, { className : item.itemType, textContent: item.itemType});
         let itemname = document.createElement('div');
-        itemname = updateHtmlElement(itemname, 'itemvalue', '', '', '', item.itemName);
+        itemname = updateHtmlElement(itemname, {className : 'itemvalue', textContent : item.itemName});
         let iteminfo = document.createElement('div');
-        iteminfo = updateHtmlElement(iteminfo, 'iteminfo', '', '', '', item.itemInfo);
+        iteminfo = updateHtmlElement(iteminfo, {className : 'iteminfo', textContent: item.itemInfo});
         let image = document.createElement('img');
-        image = updateHtmlElement(image, 'itemimage', '', '', item.itemImage);
+        image = updateHtmlElement(image, {className : 'itemimage', src : item.itemImage});
         let addbtn = document.createElement('button');
-        addbtn= updateHtmlElement(addbtn,'addbutton','','','',"ADD");
+        addbtn= updateHtmlElement(addbtn, { className:'addbutton',textContent : "ADD"});
         let price = document.createElement('div');
-        price = updateHtmlElement(price, 'itemprice', '', '', '', item.itemPrice);
+        price = updateHtmlElement(price, {className : 'itemprice',textContent: item.itemPrice});
         itemMenu = appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
         itemimage=appendChild2(itemimage,[image,addbtn]);
         Item = appendChild2(Item, [itemMenu, itemimage]);
@@ -253,23 +249,23 @@ function createHtmlItemMenu(section) {
 };
 
 /////
-function updateHtmlElement(Element, Class, ID, Href, Src, TextContent) {
-    if (Class !== '') {
-        Element.className = Class;
+function updateHtmlElement(element, {className , iD, href, src, textContent}) {
+    if (className) {
+        element.className = className;
     }
-    if (ID !== '') {
-        Element.id = ID;
+    if (iD) {
+        element.id = iD;
     }
-    if (Href !== '') {
-        Element.href = Href;
+    if (href) {
+        element.href = href;
     }
-    if (Src !== '') {
-        Element.src = Src;
+    if (src) {
+        element.src = src;
     }
-    if (TextContent !== '') {
-        Element.textContent = TextContent;
+    if (textContent) {
+        element.textContent = textContent;
     }
-    return Element;
+    return element;
 };
 
 ///////
@@ -332,16 +328,16 @@ function getPropertiesOfItem (btn)
     return properties;
 
 }
-function updateAddbtn(btn)
+function updateAddbtn(btn,idName)
 {
    let parent = btn.parentElement;
-    btn.remove();
+    btn.style.display = 'none';
    let minus = document.createElement('button');
    let quantity = document.createElement('button');
    let plus = document.createElement('button');
-   minus = updateHtmlElement(minus,"quantButton minus",'','','','-');
-   quantity = updateHtmlElement(quantity,"quantButton quantity",'','','','1'); 
-   plus = updateHtmlElement(plus,"quantButton plus",'','','','+');
+   minus = updateHtmlElement(minus,{className : "quantButton minus "+ idName + "minus",textContent : '-'});
+   quantity = updateHtmlElement(quantity,{className : "quantButton quantity "+ idName + "quantity", textContent : '1'}); 
+   plus = updateHtmlElement(plus,{className : "quantButton plus "+ idName + "plus",textContent : '+'});
    parent = appendChild2(parent , [minus,quantity,plus]);
 }
 function updateCart(btn,properties)
@@ -352,37 +348,176 @@ function updateCart(btn,properties)
         filler0.style.display = 'none';
     }
     let filler = document.getElementsByClassName('filler')[0];
+    let filler1 = document.getElementById('filler1');
+    if(!filler1)
+    {
+        filler1 = document.createElement('div');
+        filler1.id = 'filler1';
+    }
+
+    
     let cartitem = document.createElement('div');
     cartitem.className = "cartitem";
-    cartitem.id = properties.itemName + 'cart';
+    cartitem.id = properties.itemName.replace(/ /g,'') + 'cart';
     let cartItemName = document.createElement('span');
     cartItemName.textContent = properties.itemName;
+    cartItemName.className = 'cartItemName';
     let cartItemtype = document.createElement('span');
     cartItemtype.textContent = properties.type;
+    cartItemtype.className= 'cartItemType';
     let cartItemPrice = document.createElement('span');
     cartItemPrice.textContent = properties.itemPrice;
-
-
-    cartitem = appendChild2(cartitem,[cartItemtype,cartItemName,cartItemPrice]);
-   console.log(filler);
-    filler.appendChild(cartitem);
-
-
+    cartItemPrice.className = 'cartItemPrice';
+    let minus = document.createElement('button');
+   let quantity = document.createElement('button');
+   let plus = document.createElement('button');
+   minus = updateHtmlElement(minus,{ className : "quantButton minus",textContent : '-'} );
+   quantity = updateHtmlElement(quantity,{ className : "quantButton quantity", textContent : '1'}); 
+   plus = updateHtmlElement(plus,{className: "quantButton plus",textContent : '+'});
+    cartitem = appendChild2(cartitem,[cartItemtype,cartItemName,cartItemPrice,minus,quantity,plus]);
+   filler1.appendChild(cartitem);
+    filler.appendChild(filler1);
+}
+function updateTotalAmount()
+{
+    let filler = document.getElementsByClassName('filler')[0];
+    let cartTotal = document.getElementById('cartTotal');
+    if(!cartTotal)
+    {
+    cartTotal = document.createElement('div');
+    cartTotal.id = 'cartTotal';
+    }
+    total = 0;
+    for (let [key, value] of Object.entries(Cart))
+     {
+        total = total + (value.itemQuantity * value.itemPrice);
+     }
+     cartTotal.textContent = "$" + total;
+    filler.appendChild(cartTotal);
+     
 }
 Cart = {}; 
-function addButtonImplementation(menu)
+function addButtonImplementation()
 {
     let addbtns = document.querySelectorAll('.addbutton');
     addbtns.forEach((btn)=>{
         btn.addEventListener('click',()=>{
            let properties= getPropertiesOfItem(btn);
-            let itemCartname = properties.itemName;
+            let itemCartname = properties.itemName.replace(/ /g,'');
             Cart[itemCartname] = properties ; 
-            updateAddbtn(btn);
+            updateAddbtn(btn,itemCartname);
             updateCart(btn,properties);
-
+            updateTotalAmount();
+            minusButtonImplementation();
+            plusButtonImplmenetation();
         })
 
+    });
+}
+function RemoveBtn(addbtn,itemName)
+{
+    document.getElementsByClassName(itemName+'minus')[0].remove();
+    document.getElementsByClassName(itemName+'quantity')[0].remove();
+    document.getElementsByClassName(itemName+'plus')[0].remove();
+    addbtn.style.removeProperty('display');
+}
+
+function minusButtonImplementation()
+{
+    let minus = document.querySelectorAll('.minus');
+    minus.forEach((btn)=>{
+        btn.addEventListener('click',()=>{
+            let button2 = btn;
+            let button1 = btn;
+             if(btn.classList.length >= 3 )
+             {
+                let cartid=  btn.classList[2].slice(0,-5);
+                console.log("cartid" , cartid);
+                button2 = document.getElementById(cartid+'cart').childNodes[3];
+                console.log(button2);
+                button1 = btn;
+             }
+           
+            let itemName = button2.parentElement.id.slice(0,-4); 
+            
+
+            let properties = Cart[itemName];
+            
+           properties.itemQuantity = properties.itemQuantity - 1 ;
+           let itemCart = button2.parentElement;
+           let itemCartQuantity = button2.parentElement.childNodes[4];
+
+            if(button1===button2)
+            {
+                button1 = document.getElementsByClassName(itemName+'minus')[0];
+
+            }
+            let cartTotal = document.getElementById('cartTotal');
+            cartTotal.textContent = '$' + (+cartTotal.textContent.slice(1) - properties.itemPrice); 
+
+           if(properties.itemQuantity===0)
+            {
+                itemCart.remove();
+                delete Cart[itemName];
+                RemoveBtn(button1.parentElement.childNodes[1],itemName);
+            }
+            else 
+            {
+                let menuItemQuantity = document.getElementsByClassName(itemName+'quantity')[0];
+                menuItemQuantity.textContent = properties.itemQuantity;
+                itemCartQuantity.textContent = properties.itemQuantity;
+            }
+
+            if(Object.keys(Cart).length === 0)
+            {   
+               
+                cartTotal.remove();
+                let fillerEmpty = document.getElementById('filler0');
+                fillerEmpty.style.removeProperty('display');
+
+            }
+            
+        });
+
+    });
+}
+function plusButtonImplmenetation()
+{
+    let plus = document.querySelectorAll('.plus');
+    plus.forEach((btn)=>{
+
+            btn.addEventListener('click',()=>{
+            let button2 = btn;
+            let button1 = btn;
+             if(btn.classList.length >= 3 )
+             {
+                let cartid=  btn.classList[2].slice(0,-5);
+                button2 = document.getElementById(cartid+'cart').childNodes[5];
+             }
+           
+            let itemName = button2.parentElement.id.slice(0,-4);
+            
+            let properties = Cart[itemName];
+            
+           properties.itemQuantity = properties.itemQuantity + 1 ;
+           
+
+           let itemCart = button2.parentElement;
+           let itemCartQuantity = button2.parentElement.childNodes[4];
+
+            if(button1===button2)
+            {
+                button1 = document.getElementsByClassName(itemName+'plus')[0];
+
+            }
+            let cartTotal = document.getElementById('cartTotal');
+            cartTotal.textContent = '$' + (+cartTotal.textContent.slice(1) + properties.itemPrice); 
+            let menuItemQuantity = document.getElementsByClassName(itemName+'quantity')[0];
+            menuItemQuantity.textContent = properties.itemQuantity;
+            itemCartQuantity.textContent = properties.itemQuantity;
+
+        });
+           
     });
 }
 
@@ -390,6 +525,8 @@ function addButtonImplementation(menu)
 createHtmlheader(KOP);
 createHtmlSections(KOP.Menu);
 highlighter();
-addButtonImplementation(KOP.Menu);
+addButtonImplementation();
 //sectionScroll();
 
+
+})()
