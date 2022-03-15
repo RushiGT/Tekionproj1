@@ -360,7 +360,10 @@ body {
     
 }
 
-
+.off2e
+{
+     max-width:  230px;
+} 
 
 
 .off3c {
@@ -540,7 +543,8 @@ border-left: 0.5px solid rgb(180, 180, 180);
 #menuim :last-child 
 {
     border: none;
-}
+} 
+
 .menufull
 {
      
@@ -550,6 +554,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
     border-bottom: 2px solid black;
     
 }
+
 
 .filler {
     flex: 2.3;

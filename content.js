@@ -1,532 +1,605 @@
-(function ()
-{
-    let KOP = 
-        {   RestName : "Kitchens of Punjab",
-            Speciality : "Punjabi, North Indian",
-            Address : "Bilekahalli, BTM - Bangalore",
-            Ratings : 4.2 , 
-            UsersRat : "100+ Ratings",
-            DeliveryTime : '--',
-            Exclusive : {
-                            Price : 500 ,
-                            People : "Cost for two"
-                        } ,
-            Offers : [
-                        {   
-                            offer : "60% off up to ₹120",
-                            code : "Use code TRYNEW"
-                         }, 
-                        {
-                            offer : "25% off",
-                            code : "Use code PARTY"   
-                        }
-                    ],
-            Menu: [
-                {
-                    sectionId: "recommended",
-                    sectionName: "Recommended",
-                    sectionContent: [
-                        {
-                            itemId: "vegPlatter",
-                            itemName: "Veg Platter",
-                            itemPrice: 120,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
+(function () {
 
-                        },
-                        {
-                            itemId: "vegPlatter2",
-                            itemName: "Veg Platter2",
-                            itemPrice: 130,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: " Non Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter11",
-                            itemName: "Veg Platter11",
-                            itemPrice: 134,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: " Non Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter3",
-                            itemName: "Veg Platter3",
-                            itemPrice: 140,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter12",
-                            itemName: "Veg Platter12",
-                            itemPrice: 139,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: " Non Veg"
-
-                        },
-
-                    ]
-                },
-
-                {
-                    sectionId: "platters",
-                    sectionName: "Platters",
-                    sectionContent: [
-                        {
-                            itemId: "vegPlatter4",
-                            itemName: "Veg Platter4",
-                            itemPrice: 120,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter5",
-                            itemName: "Veg Platter5",
-                            itemPrice: 130,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: " Non Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter6",
-                            itemName: "Veg Platter6",
-                            itemPrice: 140,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        }
-
-                    ]
-                },
-                {
-                    sectionId: "familyPack",
-                    sectionName: "Family Pack",
-                    sectionContent: [
-                        {
-                            itemId: "vegPlatter7",
-                            itemName: "Veg Platter7",
-                            itemPrice: 120,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter8",
-                            itemName: "Veg Platter8",
-                            itemPrice: 130,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: " Non Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter9",
-                            itemName: "Veg Platter9",
-                            itemPrice: 140,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        },
-                        {
-                            itemId: "vegPlatter10",
-                            itemName: "Veg Platter10",
-                            itemPrice: 140,
-                            itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
-                            itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
-                            itemType: "Veg"
-
-                        }
-
-
-                    ]
-                }
-            ]
-        };
-        
-function createHtmlheader(KOP)
-{
-   let Board = document.getElementsByClassName('board')[0];
-   let restau = document.createElement('div');
-   restau = updateHtmlElement(restau,{className:'restau',textContent : KOP.RestName});
-   let speciality = document.createElement('div');
-   speciality = updateHtmlElement(speciality, {className:'speciality' ,textContent:KOP.Speciality});
-   let address = document.createElement('div');
-   address = updateHtmlElement(address,{className:'address',textContent :KOP.Address});
-   Board = appendChild2(Board,[restau,speciality,address]);
-   let ratings1 = document.getElementsByClassName('rat1')[0];
-   let rat1 = document.createElement('span');
-   let rat2 = document.createElement('span');
-   rat2.className = "icon-star";
-   ratings1.appendChild(rat2);
-   rat1.textContent = KOP.Ratings;
-   ratings1.appendChild(rat1);
-   let ratings2 = document.getElementsByClassName('rat2')[0];
-    let rat3 = document.createElement('span');
-    rat3.textContent = KOP.UsersRat;
-    ratings2.appendChild(rat3);
-    ratings1 = document.getElementsByClassName('rat1')[1];
-     rat1 = document.createElement('span');
-    rat1.textContent = KOP.DeliveryTime + " mins";
-    ratings1.appendChild(rat1);
-    ratings1 = document.getElementsByClassName('rat1')[2];
-    rat1 = document.createElement('span');
-   rat1.textContent = "₹ "+ KOP.Exclusive.Price ;
-   ratings1.appendChild(rat1);
-   ratings2 = document.getElementsByClassName('rat2')[2];
-   rat1 = document.createElement('span');
-   rat1.textContent = KOP.Exclusive.People ;
-   ratings2.appendChild(rat1);
-
-};
-
-function createHtmlSections(menu) {
-
-    let htmlSectionList = document.getElementById('varieties');
-    for (let section of menu) {
-        let sectionElement0 = document.createElement('li');
-        let sectionElement = document.createElement('a');
-        sectionElement = updateHtmlElement(sectionElement, {className :"ListSection", iD : section.sectionId, href: "#"+section.sectionId+ "cursor", textContent: section.sectionName});
-        if(menu[0]===section)
-        {
-             sectionElement0.className= "activate";
-        }
-        sectionElement0.id =section.sectionId+ "cursor1";
-        sectionElement0.appendChild(sectionElement);
-        htmlSectionList.appendChild(sectionElement0);
-        createHtmlItemMenu(section);
-
-    }
-};
-
-function createHtmlItemMenu(section) {
-    let itemList = document.createElement('div'); // Section wise ItemList  
-    itemList = updateHtmlElement(itemList, {className:'menufull', iD : section.sectionId + "cursor"});
-    let sectionNAME = document.createElement('div');
-    sectionNAME = updateHtmlElement(sectionNAME, {className:'sectionfull', iD : section.sectionId + "Menu", textContent: section.sectionName});
-    let sectionSize = document.createElement('div');
-    sectionSize = updateHtmlElement(sectionSize, {className : 'sizefull', iD : section.sectionId + "Size" ,textContent: section.sectionContent.length + " items"});
-    itemList = appendChild2(itemList, [sectionNAME, sectionSize]);
-    for (let item of section.sectionContent) {
-        let Item = document.createElement('div');
-        Item = updateHtmlElement(Item,{ className : 'itemFull', iD : item.itemId});
-        let itemMenu = document.createElement('div');
-        let itemimage = document.createElement('div');
-        itemMenu = updateHtmlElement(itemMenu, { iD : item.itemId + "menu"});
-        itemimage = updateHtmlElement(itemimage, {iD : item.itemId + "image"});
-        let itemtype = document.createElement('div');
-        itemtype = updateHtmlElement(itemtype, { className : item.itemType, textContent: item.itemType});
-        let itemname = document.createElement('div');
-        itemname = updateHtmlElement(itemname, {className : 'itemvalue', textContent : item.itemName});
-        let iteminfo = document.createElement('div');
-        iteminfo = updateHtmlElement(iteminfo, {className : 'iteminfo', textContent: item.itemInfo});
-        let image = document.createElement('img');
-        image = updateHtmlElement(image, {className : 'itemimage', src : item.itemImage});
-        let addbtn = document.createElement('button');
-        addbtn= updateHtmlElement(addbtn, { className:'addbutton',textContent : "ADD"});
-        let price = document.createElement('div');
-        price = updateHtmlElement(price, {className : 'itemprice',textContent: item.itemPrice});
-        itemMenu = appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
-        itemimage=appendChild2(itemimage,[image,addbtn]);
-        Item = appendChild2(Item, [itemMenu, itemimage]);
-        itemList.appendChild(Item);
-    }
-    let itemhtmllist = document.getElementById('menuim');
-    itemhtmllist.appendChild(itemList);
-
-};
-
-/////
-function updateHtmlElement(element, {className , iD, href, src, textContent}) {
-    if (className) {
-        element.className = className;
-    }
-    if (iD) {
-        element.id = iD;
-    }
-    if (href) {
-        element.href = href;
-    }
-    if (src) {
-        element.src = src;
-    }
-    if (textContent) {
-        element.textContent = textContent;
-    }
-    return element;
-};
-
-///////
-let appendChild2 = function (parent, children) {
-    for (let child of children) {
-        parent.appendChild(child);
-    }
-    return parent;
-};
-
-/*function sectionScroll()
-{
-    const link = document.querySelectorAll('.ListSection');
-   
-    link.forEach((item)=>{
-       
-        item.addEventListener("click", ()=> 
-        {
-                let element = document.getElementById(item.getAttribute('id') + "cursor");
-                element.scrollIntoView({
-                    behavior : "smooth",
-                });
-        }
-        )
-
-    });
-} 
-*/
-function highlighter()
-{
-
-const menus = document.querySelectorAll(".menufull");
-window.addEventListener("scroll", () => {
-   menus.forEach((menu)=>{
-       let position = menu.getBoundingClientRect();
-       
-       let section = document.getElementById(menu.id + '1');
-       //console.log(section);
-    
-       if(position.top<=400 && position.top>=400-position.height) {
-		section.classList.add('activate');
-	    }
-        else 
-        {
-           section.classList.remove('activate');
-        }
-   })
-});
-} 
-function getPropertiesOfItem (btn)
-{
-   let itemElmnt = btn.parentElement.parentElement;
-    let itemInfoElmnt = itemElmnt.firstChild;
-    let itemPropertiesHtml = itemInfoElmnt.childNodes;
-    let properties = {};
-    properties.type = itemPropertiesHtml[0].innerHTML;
-    properties.itemName = itemPropertiesHtml[1].innerHTML;
-    properties.itemPrice = +itemPropertiesHtml[2].innerHTML;
-    properties.itemQuantity = 1;
-    return properties;
-
-}
-function updateAddbtn(btn,idName)
-{
-   let parent = btn.parentElement;
-    btn.style.display = 'none';
-   let minus = document.createElement('button');
-   let quantity = document.createElement('button');
-   let plus = document.createElement('button');
-   minus = updateHtmlElement(minus,{className : "quantButton minus "+ idName + "minus",textContent : '-'});
-   quantity = updateHtmlElement(quantity,{className : "quantButton quantity "+ idName + "quantity", textContent : '1'}); 
-   plus = updateHtmlElement(plus,{className : "quantButton plus "+ idName + "plus",textContent : '+'});
-   parent = appendChild2(parent , [minus,quantity,plus]);
-}
-function updateCart(btn,properties)
-{
-    let filler0 = document.getElementById('filler0');
-    if(filler0.style.display !== 'none')
+    let KitchensOfPunjab =
     {
-        filler0.style.display = 'none';
-    }
-    let filler = document.getElementsByClassName('filler')[0];
-    let filler1 = document.getElementById('filler1');
-    if(!filler1)
-    {
-        filler1 = document.createElement('div');
-        filler1.id = 'filler1';
-    }
-
-    
-    let cartitem = document.createElement('div');
-    cartitem.className = "cartitem";
-    cartitem.id = properties.itemName.replace(/ /g,'') + 'cart';
-    let cartItemName = document.createElement('span');
-    cartItemName.textContent = properties.itemName;
-    cartItemName.className = 'cartItemName';
-    let cartItemtype = document.createElement('span');
-    cartItemtype.textContent = properties.type;
-    cartItemtype.className= 'cartItemType';
-    let cartItemPrice = document.createElement('span');
-    cartItemPrice.textContent = properties.itemPrice;
-    cartItemPrice.className = 'cartItemPrice';
-    let minus = document.createElement('button');
-   let quantity = document.createElement('button');
-   let plus = document.createElement('button');
-   minus = updateHtmlElement(minus,{ className : "quantButton minus",textContent : '-'} );
-   quantity = updateHtmlElement(quantity,{ className : "quantButton quantity", textContent : '1'}); 
-   plus = updateHtmlElement(plus,{className: "quantButton plus",textContent : '+'});
-    cartitem = appendChild2(cartitem,[cartItemtype,cartItemName,cartItemPrice,minus,quantity,plus]);
-   filler1.appendChild(cartitem);
-    filler.appendChild(filler1);
-}
-function updateTotalAmount()
-{
-    let filler = document.getElementsByClassName('filler')[0];
-    let cartTotal = document.getElementById('cartTotal');
-    if(!cartTotal)
-    {
-    cartTotal = document.createElement('div');
-    cartTotal.id = 'cartTotal';
-    }
-    total = 0;
-    for (let [key, value] of Object.entries(Cart))
-     {
-        total = total + (value.itemQuantity * value.itemPrice);
-     }
-     cartTotal.textContent = "$" + total;
-    filler.appendChild(cartTotal);
-     
-}
-Cart = {}; 
-function addButtonImplementation()
-{
-    let addbtns = document.querySelectorAll('.addbutton');
-    addbtns.forEach((btn)=>{
-        btn.addEventListener('click',()=>{
-           let properties= getPropertiesOfItem(btn);
-            let itemCartname = properties.itemName.replace(/ /g,'');
-            Cart[itemCartname] = properties ; 
-            updateAddbtn(btn,itemCartname);
-            updateCart(btn,properties);
-            updateTotalAmount();
-            minusButtonImplementation();
-            plusButtonImplmenetation();
-        })
-
-    });
-}
-function RemoveBtn(addbtn,itemName)
-{
-    document.getElementsByClassName(itemName+'minus')[0].remove();
-    document.getElementsByClassName(itemName+'quantity')[0].remove();
-    document.getElementsByClassName(itemName+'plus')[0].remove();
-    addbtn.style.removeProperty('display');
-}
-
-function minusButtonImplementation()
-{
-    let minus = document.querySelectorAll('.minus');
-    minus.forEach((btn)=>{
-        btn.addEventListener('click',()=>{
-            let button2 = btn;
-            let button1 = btn;
-             if(btn.classList.length >= 3 )
-             {
-                let cartid=  btn.classList[2].slice(0,-5);
-                console.log("cartid" , cartid);
-                button2 = document.getElementById(cartid+'cart').childNodes[3];
-                console.log(button2);
-                button1 = btn;
-             }
-           
-            let itemName = button2.parentElement.id.slice(0,-4); 
-            
-
-            let properties = Cart[itemName];
-            
-           properties.itemQuantity = properties.itemQuantity - 1 ;
-           let itemCart = button2.parentElement;
-           let itemCartQuantity = button2.parentElement.childNodes[4];
-
-            if(button1===button2)
+        restaurantName: "Kitchens of Punjab",
+        speciality: "Punjabi, North Indian",
+        address: "Bilekahalli, BTM - Bangalore",
+        ratings: 4.2,
+        usersRat: "100+ Ratings",
+        deliveryTime: '--',
+        exclusive: {
+            price: 500,
+            people: "Cost for two"
+        },
+        offers: [
             {
-                button1 = document.getElementsByClassName(itemName+'minus')[0];
+                offer: "60% off up to ₹120",
+                code: "Use code TRYNEW"
+            },
+            {
+                offer: "25% off",
+                code: "Use code PARTY"
+            }
+        ],
+        menu: [
+            {
+                sectionId: "Recommended",
+                sectionName: "Recommended",
+                sectionContent: [
+                    {
+                        itemId: "VegPlatter",
+                        itemName: "Veg Platter",
+                        itemPrice: 120,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter2",
+                        itemName: "Veg Platter2",
+                        itemPrice: 130,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: " Non Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter11",
+                        itemName: "Veg Platter11",
+                        itemPrice: 134,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: " Non Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter3",
+                        itemName: "Veg Platter3",
+                        itemPrice: 140,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter12",
+                        itemName: "Veg Platter12",
+                        itemPrice: 139,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: " Non Veg"
+
+                    },
+
+                ]
+            },
+
+            {
+                sectionId: "Platters",
+                sectionName: "Platters",
+                sectionContent: [
+                    {
+                        itemId: "VegPlatter4",
+                        itemName: "Veg Platter4",
+                        itemPrice: 120,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter5",
+                        itemName: "Veg Platter5",
+                        itemPrice: 130,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: " Non Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter6",
+                        itemName: "Veg Platter6",
+                        itemPrice: 140,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    }
+
+                ]
+            },
+            {
+                sectionId: "FamilyPack",
+                sectionName: "Family Pack",
+                sectionContent: [
+                    {
+                        itemId: "VegPlatter7",
+                        itemName: "Veg Platter7",
+                        itemPrice: 120,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter8",
+                        itemName: "Veg Platter8",
+                        itemPrice: 130,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: " Non Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter9",
+                        itemName: "Veg Platter9",
+                        itemPrice: 140,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    },
+                    {
+                        itemId: "VegPlatter10",
+                        itemName: "Veg Platter10",
+                        itemPrice: 140,
+                        itemImage: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/svwiyc9assj6qorpdji0",
+                        itemInfo: "An authentic veg platter with 3 pieces of Paneer Achari, 3 pieces of Hara Bhara, 3 pieces of Veg Seekh and 3 pieces of Malai Chaap.",
+                        itemType: "Veg"
+
+                    }
+
+
+                ]
+            }
+        ]
+    };
+    const Utilities = (function () {
+        function updateHtmlElement(element, { className, iD, href, src, textContent }) {
+            if (className) {
+                element.className = className;
+            }
+            if (iD) {
+                element.id = iD;
+            }
+            if (href) {
+                element.href = href;
+            }
+            if (src) {
+                element.src = src;
+            }
+            if (textContent) {
+                element.textContent = textContent;
+            }
+            return element;
+        };
+        let appendChild2 = function (parent, children) {
+            for (let child of children) {
+                parent.appendChild(child);
+            }
+            return parent;
+        };
+        function toggleDisplay(element) {
+            if (element.style.display !== 'none') {
+                element.style.display = 'none';
+            }
+            else {
+                element.style.removeProperty('display');
+            }
+        };
+        function createQuantityButton(className, itemId, text) {
+            let button = document.createElement('button');
+            button = Utilities.updateHtmlElement(button, { className: className , iD: itemId, textContent: text });
+            return button;
+
+        };
+        function getPropertiesById(itemId,sectionId)
+        { let section = KitchensOfPunjab.menu.filter(s => s.sectionId===sectionId);
+            let itemData = section[0].sectionContent.filter(item => item.itemId === itemId);
+            itemData = itemData[0];
+            
+            let properties ={itemId : itemData.itemId, itemType : itemData.itemType , itemName : itemData.itemName , itemPrice : itemData.itemPrice, sectionId : sectionId};
+            
+            return properties;
+        }
+        return { updateHtmlElement, appendChild2, toggleDisplay, createQuantityButton , getPropertiesById};
+    })();
+
+    const Head = (function () {
+        function createHeaderHTML_Board() {
+            let Board = document.getElementsByClassName('board')[0];
+            let restaurant = document.createElement('div');
+            restaurant = Utilities.updateHtmlElement(restaurant, { className: 'restau', textContent: KitchensOfPunjab.restaurantName });
+            let speciality = document.createElement('div');
+            speciality = Utilities.updateHtmlElement(speciality, { className: 'speciality', textContent: KitchensOfPunjab.speciality });
+            let address = document.createElement('div');
+            address = Utilities.updateHtmlElement(address, { className: 'address', textContent: KitchensOfPunjab.address });
+            Board = Utilities.appendChild2(Board, [restaurant, speciality, address]);
+        };
+        function createHeaderHTML_Ratings() {
+            let ratings1 = document.getElementsByClassName('rat1')[0];
+            let rat1 = document.createElement('span');
+            let rat2 = document.createElement('span');
+            rat2.className = "icon-star";
+            ratings1.appendChild(rat2);
+            rat1.textContent = KitchensOfPunjab.ratings;
+            ratings1.appendChild(rat1);
+            let ratings2 = document.getElementsByClassName('rat2')[0];
+            let rat3 = document.createElement('span');
+            rat3.textContent = KitchensOfPunjab.usersRat;
+            ratings2.appendChild(rat3);
+        };
+        function createHeaderHTML__Delivery() {
+            let ratings1 = document.getElementsByClassName('rat1')[1];
+            let rat1 = document.createElement('span');
+            rat1.textContent = KitchensOfPunjab.deliveryTime + " mins";
+            ratings1.appendChild(rat1);
+
+        };
+        function createHeaderHTML__Special() {
+            let ratings1 = document.getElementsByClassName('rat1')[2];
+            let rat1 = document.createElement('span');
+            rat1.textContent = "₹ " + KitchensOfPunjab.exclusive.price;
+            ratings1.appendChild(rat1);
+            let ratings2 = document.getElementsByClassName('rat2')[2];
+            rat1 = document.createElement('span');
+            rat1.textContent = KitchensOfPunjab.exclusive.people;
+            ratings2.appendChild(rat1);
+        };
+        function createHeaderHTML() {
+            createHeaderHTML_Board();
+            createHeaderHTML_Ratings();
+            createHeaderHTML__Delivery();
+            createHeaderHTML__Special();
+        };
+        return {
+            createHeaderHTML: createHeaderHTML
+        };
+
+    })();
+    const Menu = (function () {
+        function createMenuHTML_Section(menu) {
+
+            let htmlSectionList = document.getElementById('varieties');
+            for (let section of menu) {
+                let sectionElement0 = document.createElement('li');
+                let sectionElement = document.createElement('a');
+                sectionElement = Utilities.updateHtmlElement(sectionElement, { className: "ListSection", iD: section.sectionId, href: "#" + section.sectionId + "cursor", textContent: section.sectionName });
+                if (menu[0] === section) {
+                    sectionElement0.className = "activate";
+                }
+                sectionElement0.id = section.sectionId + "cursor1";
+                sectionElement0.appendChild(sectionElement);
+                htmlSectionList.appendChild(sectionElement0);
+                createMenuHTML_ItemList(section);
 
             }
-            let cartTotal = document.getElementById('cartTotal');
-            cartTotal.textContent = '$' + (+cartTotal.textContent.slice(1) - properties.itemPrice); 
+        };
+        function createMenuHTML_ItemList_ItemMenuDiv(item) {
+            let itemtype = document.createElement('div');
+            itemtype = Utilities.updateHtmlElement(itemtype, { className: item.itemType, textContent: item.itemType });
+            let itemname = document.createElement('div');
+            itemname = Utilities.updateHtmlElement(itemname, { className: 'itemvalue', textContent: item.itemName });
+            let iteminfo = document.createElement('div');
+            iteminfo = Utilities.updateHtmlElement(iteminfo, { className: 'iteminfo', textContent: item.itemInfo });
+            let price = document.createElement('div');
+            price = Utilities.updateHtmlElement(price, { className: 'itemprice', textContent: item.itemPrice });
+            return { itemtype, itemname, iteminfo, price };
 
-           if(properties.itemQuantity===0)
+        };
+        function createMenuHTML_ItemList_ItemImageDiv(item) {
+            let image = document.createElement('img');
+            image = Utilities.updateHtmlElement(image, { className: 'itemimage', src: item.itemImage });
+            let addbtn = document.createElement('button');
+            addbtn = Utilities.updateHtmlElement(addbtn, { className: 'addbutton', textContent: "ADD" });
+
+            return { image, addbtn };
+        };
+
+        function createMenuHTML_ItemList(section) {
+            let itemList = createMenuHTML_ItemList_Heading(section);
+
+            for (let item of section.sectionContent) {
+                let Item = document.createElement('div');
+                Item = Utilities.updateHtmlElement(Item, { className: 'itemFull', iD: item.itemId });
+                let itemMenu = document.createElement('div');
+                itemMenu = Utilities.updateHtmlElement(itemMenu, { iD: item.itemId + "menu" });
+                let itemimage = document.createElement('div');
+                itemimage = Utilities.updateHtmlElement(itemimage, { iD: item.itemId + "image" });
+                let { itemtype, itemname, iteminfo, price } = createMenuHTML_ItemList_ItemMenuDiv(item);
+                let { image, addbtn } = createMenuHTML_ItemList_ItemImageDiv(item);
+                itemMenu = Utilities.appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
+                itemimage = Utilities.appendChild2(itemimage, [image, addbtn]);
+                Item = Utilities.appendChild2(Item, [itemMenu, itemimage]);
+                itemList.appendChild(Item);
+            }
+            let itemhtmllist = document.getElementById('menuim');
+            itemhtmllist.appendChild(itemList);
+
+        };
+        function createMenuHTML_ItemList_Heading(section) {
+            let itemList = document.createElement('div'); // Section wise ItemList  
+            itemList = Utilities.updateHtmlElement(itemList, { className: 'menufull', iD: section.sectionId + "cursor" });
+            let sectionNAME = createMenuHTML_ItemList_SectionName(section);
+            let sectionSize = createMenuHTML_ItemList_SectionSize(section);
+            itemList = Utilities.appendChild2(itemList, [sectionNAME, sectionSize]);
+            return itemList;
+        };
+        function createMenuHTML_ItemList_SectionName(section) {
+            let sectionNAME = document.createElement('div');
+            sectionNAME = Utilities.updateHtmlElement(sectionNAME, { className: 'sectionfull', iD: section.sectionId + "Menu", textContent: section.sectionName });
+            return sectionNAME;
+        };
+        function createMenuHTML_ItemList_SectionSize(section) {
+            let sectionSize = document.createElement('div');
+            sectionSize = Utilities.updateHtmlElement(sectionSize, { className: 'sizefull', iD: section.sectionId + "Size", textContent: section.sectionContent.length + " items" });
+            return sectionSize;
+        };
+        function highlightSectionList() {
+
+            const menus = document.querySelectorAll(".menufull");
+            window.addEventListener("scroll", () => {
+                menus.forEach((menu) => {
+                    let position = menu.getBoundingClientRect();
+
+                    let section = document.getElementById(menu.id + '1');
+                    //console.log(section);
+
+                    if (position.top <= 400 && position.top >= 400 - position.height) {
+                        section.classList.add('activate');
+                    }
+                    else {
+                        section.classList.remove('activate');
+                    }
+                })
+            });
+        };
+        
+
+        function placeQuantityButton(btn, itemId) {
+            let parent = btn.parentElement;
+            Utilities.toggleDisplay(btn);
+            let minus = Utilities.createQuantityButton('minus', itemId + 'minus' , '-');
+            let quantity = Utilities.createQuantityButton('quantity', itemId + 'quantity', '1');
+            let plus = Utilities.createQuantityButton('plus', itemId + 'plus', '+');
+            parent = Utilities.appendChild2(parent, [minus, quantity, plus]);
+
+        }
+        function triggerAdd(btn) {
+            let properties = Utilities.getPropertiesById(btn.closest('.itemFull').id,btn.closest('.menufull').id.slice(0,-6));
+            placeQuantityButton(btn, properties.itemId);
+            Cart.placeItem(properties);
+
+
+
+        };
+
+        function listenBtnEvent() {
+            let menu = document.getElementById('menuim');
+            menu.addEventListener('click', (event) => {
+                if (event.target.className === 'addbutton') {
+                    triggerAdd(event.target);
+                }
+                else if (event.target.classList[0] === 'minus') {
+                                        
+                    Cart.triggerMinus(event.target,1);
+                }
+                else if(event.target.classList[0] === 'plus')
+                {
+                    Cart.triggerPlus(event.target,1);
+                }
+            });
+        };
+        function createMenuHTML(menu) {
+            createMenuHTML_Section(menu);
+            highlightSectionList();
+            listenBtnEvent();
+        };
+
+
+        return { createMenuHTML, highlightSectionList };
+    })();
+
+    const Cart = (function () {
+        let cart = [];
+        let itemCount = new Map();
+        let total = 0;
+        function getCartItemPropertiesById(itemId)
+        {
+            return cart.filter(i => i.itemId === itemId)[0];
+        }
+        function addItemtoCart(properties) {
+            cart.push(properties);
+            itemCount.set(properties.itemId, 1);
+        }
+        function createCartItem(properties) {
+
+            let cartitem = document.createElement('div');
+            cartitem.className = "cartitem";
+            cartitem.id = properties.itemId+ 'cart';
+            let cartItemName = document.createElement('span');
+            cartItemName.textContent = properties.itemName;
+            cartItemName.className = 'cartItemName';
+            let cartItemtype = document.createElement('span');
+            cartItemtype.textContent = properties.itemType;
+            cartItemtype.className = 'cartItemType';
+            let cartItemPrice = document.createElement('span');
+            cartItemPrice.textContent = '$' + properties.itemPrice;
+            cartItemPrice.className = 'cartItemPrice';
+            let minus = Utilities.createQuantityButton('minus','', '-');
+            let quantity = Utilities.createQuantityButton('quantity','', '1');
+            let plus = Utilities.createQuantityButton('plus','', '+');
+            cartitem = Utilities.appendChild2(cartitem, [cartItemtype, cartItemName, cartItemPrice, minus, quantity, plus]);
+            return cartitem;
+        }
+        function addItemtoCartHTML(properties) {
+            let filler0 = document.getElementById('filler0');
+            let filler1 = document.getElementById('filler1');
+
+            if (filler0.style.display !== 'none') {
+                filler0.style.display = 'none';
+                filler1 = document.createElement('div');
+                filler1.id = 'filler1';
+                let filler = document.getElementsByClassName('filler')[0];
+                filler.appendChild(filler1);
+                listenBtnEvent();
+
+            }
+            let cartItem = createCartItem(properties);
+            filler1.appendChild(cartItem);
+        }
+        function updateOrCreateTotalDiv({ itemPrice, action}) {
+            let filler = document.getElementsByClassName('filler')[0];
+            let cartTotal = document.getElementById('cartTotal');
+            if (!cartTotal) {
+                cartTotal = document.createElement('div');
+                cartTotal.id = 'cartTotal';
+                total = itemPrice;
+                cartTotal.textContent = "$" + total;
+                filler.appendChild(cartTotal);
+            }
+            else if (action === 'add') {
+                total = total + itemPrice;
+                cartTotal.textContent = "$" + total;
+            }
+            else if (action === 'minus') {
+               total = total - itemPrice;
+               if(total === 0)
+               {
+                   cartTotal.remove();
+                   Utilities.toggleDisplay(document.getElementById('filler0'));
+
+               }
+               else {
+               cartTotal.textContent = "$" + total;
+               }
+
+
+            }
+            else if (action === 'plus') {
+                total = total + itemPrice ;
+                cartTotal.textContent = "$" + total;
+            }
+        }
+        function removeItemFromCartById(itemId)
+        {
+            for( var i = 0; i < cart.length; i++){ 
+                                   
+                if ( cart[i].itemId === itemId) { 
+                    cart.splice(i, 1); 
+                    break;
+                }
+            }
+        
+        }
+        function removeQuantityFromMenu_And_ToggleAdd(itemId)
+        {
+            document.getElementById(itemId+'minus').remove();
+            document.getElementById(itemId+'quantity').remove();
+            document.getElementById(itemId+'plus').remove();
+            Utilities.toggleDisplay(document.querySelectorAll("#"+itemId+"image .addbutton")[0]);
+            
+        }
+        function decreaseItemCount(properties)
+        {
+            let itemQuantity = itemCount.get(properties.itemId);
+            if(itemQuantity===1)
             {
-                itemCart.remove();
-                delete Cart[itemName];
-                RemoveBtn(button1.parentElement.childNodes[1],itemName);
+                itemCount.delete(properties.itemId);
+                removeItemFromCartById(properties.itemId);
+                let itemCartHTML  = document.getElementById(properties.itemId + 'cart');
+                itemCartHTML.remove();
+                removeQuantityFromMenu_And_ToggleAdd(properties.itemId);
+
             }
             else 
             {
-                let menuItemQuantity = document.getElementsByClassName(itemName+'quantity')[0];
-                menuItemQuantity.textContent = properties.itemQuantity;
-                itemCartQuantity.textContent = properties.itemQuantity;
-            }
-
-            if(Object.keys(Cart).length === 0)
-            {   
-               
-                cartTotal.remove();
-                let fillerEmpty = document.getElementById('filler0');
-                fillerEmpty.style.removeProperty('display');
+                itemQuantity = itemQuantity -1 ;
+                itemCount.set(properties.itemId,itemQuantity);
+                let itemHTMLquantity = document.querySelectorAll("#"+properties.itemId+"cart .quantity")[0];
+                itemHTMLquantity.textContent = itemQuantity;
+                let itemHTMLPrice = document.querySelectorAll("#"+properties.itemId+"cart .cartItemPrice")[0];
+                itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice) ;
+                let itemHTMLquantityMenu = document.getElementById(properties.itemId+'quantity');
+                itemHTMLquantityMenu.textContent = itemQuantity ;
 
             }
-            
-        });
 
-    });
-}
-function plusButtonImplmenetation()
-{
-    let plus = document.querySelectorAll('.plus');
-    plus.forEach((btn)=>{
+        }
+        function increaseItemCount(properties)
+        {
+            let itemQuantity = itemCount.get(properties.itemId);
+            itemQuantity = itemQuantity + 1 ;
+                itemCount.set(properties.itemId,itemQuantity);
+                let itemHTMLquantity = document.querySelectorAll("#"+properties.itemId+"cart .quantity")[0];
+                itemHTMLquantity.textContent = itemQuantity;
+                let itemHTMLPrice = document.querySelectorAll("#"+properties.itemId+"cart .cartItemPrice")[0];
+                itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice) ;
+                let itemHTMLquantityMenu = document.getElementById(properties.itemId+'quantity');
+                itemHTMLquantityMenu.textContent = itemQuantity ;
 
-            btn.addEventListener('click',()=>{
-            let button2 = btn;
-            let button1 = btn;
-             if(btn.classList.length >= 3 )
-             {
-                let cartid=  btn.classList[2].slice(0,-5);
-                button2 = document.getElementById(cartid+'cart').childNodes[5];
-             }
-           
-            let itemName = button2.parentElement.id.slice(0,-4);
-            
-            let properties = Cart[itemName];
-            
-           properties.itemQuantity = properties.itemQuantity + 1 ;
-           
-
-           let itemCart = button2.parentElement;
-           let itemCartQuantity = button2.parentElement.childNodes[4];
-
-            if(button1===button2)
+        }
+        function triggerMinus(btn,btnNumber)
+        {   let itemId;
+            if(btnNumber===1)
             {
-                button1 = document.getElementsByClassName(itemName+'plus')[0];
+                 itemId= btn.closest('.itemFull').id;
 
             }
-            let cartTotal = document.getElementById('cartTotal');
-            cartTotal.textContent = '$' + (+cartTotal.textContent.slice(1) + properties.itemPrice); 
-            let menuItemQuantity = document.getElementsByClassName(itemName+'quantity')[0];
-            menuItemQuantity.textContent = properties.itemQuantity;
-            itemCartQuantity.textContent = properties.itemQuantity;
+            else
+            {
+                itemId = btn.closest('.cartitem').id.slice(0,-4);
+            }
+            let properties = getCartItemPropertiesById(itemId);
+            decreaseItemCount(properties);
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice,action : 'minus'});
+        }
 
-        });
-           
-    });
-}
+        function triggerPlus(btn,btnNumber)
+        {
+            let itemId;
+            if(btnNumber===1)
+            {
+                 itemId= btn.closest('.itemFull').id;
 
-/////
-createHtmlheader(KOP);
-createHtmlSections(KOP.Menu);
-highlighter();
-addButtonImplementation();
-//sectionScroll();
+            }
+            else
+            {
+                itemId = btn.closest('.cartitem').id.slice(0,-4);
+            }
+            let properties = getCartItemPropertiesById(itemId);
+            increaseItemCount(properties);
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice,action : 'plus'});
 
+        }
 
-})()
+        function placeItem(properties) {
+            addItemtoCart(properties);
+            addItemtoCartHTML(properties);
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice, action :'add'});
+        }
+        function listenBtnEvent()
+        {
+            let filler = document.getElementsByClassName('filler')[0];
+            filler.addEventListener('click', (event) => {
+                if (event.target.classList[0] === 'minus') {
+                                        
+                    triggerMinus(event.target,2);
+                }
+                else if(event.target.classList[0] === 'plus')
+                {
+                    triggerPlus(event.target,2);
+                }
+            });
+        }
+        
+        return { placeItem , triggerMinus, triggerPlus , listenBtnEvent};
+
+    })();
+    Head.createHeaderHTML();
+
+    Menu.createMenuHTML(KitchensOfPunjab.menu);
+
+})();
