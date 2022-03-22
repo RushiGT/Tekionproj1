@@ -540,7 +540,7 @@ border-left: 0.5px solid rgb(180, 180, 180);
 
 }
 
-#menuim :last-child 
+#menufull .itemfull:last-child, #menuim .menufull:last-child 
 {
     border: none;
 } 
@@ -724,8 +724,124 @@ border-left: 0.5px solid rgb(180, 180, 180);
      border-right: 2px solid #fc8019 ;
 } 
 
-.quantButton 
-{
-    display: inline-block;
+.buttonDiv 
+{   max-width: max-content;
+    margin: 0px auto;
+    position: relative;
+    top: -15px;
+    font-family: ProximaNova, sans-serif, Helvetica Neue ;
 }
 
+.addbutton
+{   color: #60b246;
+    padding: 5px 20px;
+    background-color:  white;
+    border: 1px solid #ced0d3;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.quantityDiv 
+{    color: #60b246;
+     max-width: max-content;
+     margin: 0px auto;
+    position: relative;
+    padding: 4px;
+    top: -15px;
+    border: 1px solid #ced0d3;
+    background-color: white;
+    font-family: ProximaNova, sans-serif, Helvetica Neue ;
+    font-size: 12px;
+  
+}
+.minus 
+{  
+    border: none;
+    border-right: 1px solid #ced0d3;
+    background-color: white;
+    padding: 0px 8px;
+}
+.plus
+{
+    
+    border: none;
+    border-left: 1px solid #ced0d3;
+    background-color: white;
+    padding: 0px 8px;
+    
+}
+.cartitem
+{
+    font-family: ProximaNova, sans-serif, Helvetica Neue ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 0px;
+    
+    
+}
+.quantity
+{
+    
+    border: none;
+    background-color: white;
+    padding: 0px 8px;
+}
+#filler1{
+    max-width: 300px;
+}
+.cartItemType
+{
+    flex:0.2;
+    font-size: 8px;
+    color: #60b246;
+   
+
+}
+.cartItemName
+{  
+    flex:1;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.cartItemPrice
+{   
+    flex:1;
+    font-size: 14px;
+    font-weight: 200;
+    text-align: end;
+
+}
+.quantityDivcart
+{
+    flex:1;
+    color: #60b246;
+     max-width: max-content;
+     
+    padding: 4px;
+    border: 1px solid #ced0d3;
+    background-color: white;
+    font-size: 12px;
+}
+#cartTotalTitle
+{
+    display: inline-block;
+    margin-right:  100px;
+}
+#cartTotal 
+{
+display: inline-block;
+}
+
+#cartTotalDiv
+{  
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#cartTitle
+{
+    font-size: 32px;
+    font-weight: 600;
+}
