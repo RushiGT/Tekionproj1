@@ -189,29 +189,22 @@
                 element.style.removeProperty('display');
             }
         };
-        function createQuantityButton(className, itemId, text, flag) {
-            let button;
-            if (flag) {
-                button = document.createElement('span');
-
-            }
-            else {
-                button = document.createElement('button');
-            }
-            button = Utilities.updateHtmlElement(button, { className: className, iD: itemId, textContent: text });
+        function createQuantityButton(className, itemId, text) {
+            let button = document.createElement('button');
+            button = Utilities.updateHtmlElement(button, { className: className , iD: itemId, textContent: text });
             return button;
 
         };
-        function getPropertiesById(itemId, sectionId) {
-            let section = KitchensOfPunjab.menu.filter(s => s.sectionId === sectionId);
+        function getPropertiesById(itemId,sectionId)
+        { let section = KitchensOfPunjab.menu.filter(s => s.sectionId===sectionId);
             let itemData = section[0].sectionContent.filter(item => item.itemId === itemId);
             itemData = itemData[0];
-
-            let properties = { itemId: itemData.itemId, itemType: itemData.itemType, itemName: itemData.itemName, itemPrice: itemData.itemPrice, sectionId: sectionId };
-
+            
+            let properties ={itemId : itemData.itemId, itemType : itemData.itemType , itemName : itemData.itemName , itemPrice : itemData.itemPrice, sectionId : sectionId};
+            
             return properties;
         }
-        return { updateHtmlElement, appendChild2, toggleDisplay, createQuantityButton, getPropertiesById };
+        return { updateHtmlElement, appendChild2, toggleDisplay, createQuantityButton , getPropertiesById};
     })();
 
     const Head = (function () {
@@ -299,12 +292,10 @@
         function createMenuHTML_ItemList_ItemImageDiv(item) {
             let image = document.createElement('img');
             image = Utilities.updateHtmlElement(image, { className: 'itemimage', src: item.itemImage });
-            let btnDiv = document.createElement('div');
-            btnDiv = Utilities.updateHtmlElement(btnDiv , {className : 'buttonDiv'});
             let addbtn = document.createElement('button');
             addbtn = Utilities.updateHtmlElement(addbtn, { className: 'addbutton', textContent: "ADD" });
-            btnDiv.appendChild(addbtn);
-            return { image, btnDiv };
+
+            return { image, addbtn };
         };
 
         function createMenuHTML_ItemList(section) {
@@ -316,11 +307,11 @@
                 let itemMenu = document.createElement('div');
                 itemMenu = Utilities.updateHtmlElement(itemMenu, { iD: item.itemId + "menu" });
                 let itemimage = document.createElement('div');
-                itemimage = Utilities.updateHtmlElement(itemimage, { className : 'imageAndButtonDiv',iD: item.itemId + "image" });
+                itemimage = Utilities.updateHtmlElement(itemimage, { iD: item.itemId + "image" });
                 let { itemtype, itemname, iteminfo, price } = createMenuHTML_ItemList_ItemMenuDiv(item);
-                let { image, btnDiv } = createMenuHTML_ItemList_ItemImageDiv(item);
+                let { image, addbtn } = createMenuHTML_ItemList_ItemImageDiv(item);
                 itemMenu = Utilities.appendChild2(itemMenu, [itemtype, itemname, price, iteminfo]);
-                itemimage = Utilities.appendChild2(itemimage, [image, btnDiv]);
+                itemimage = Utilities.appendChild2(itemimage, [image, addbtn]);
                 Item = Utilities.appendChild2(Item, [itemMenu, itemimage]);
                 itemList.appendChild(Item);
             }
@@ -365,22 +356,19 @@
                 })
             });
         };
-
+        
 
         function placeQuantityButton(btn, itemId) {
-            let grandparent = document.getElementById(itemId+"image");
-            let parent = document.createElement('div');
-            parent.className = 'quantityDiv';
+            let parent = btn.parentElement;
             Utilities.toggleDisplay(btn);
-            let minus = Utilities.createQuantityButton('minus', itemId + 'minus', '-');
-            let quantity = Utilities.createQuantityButton('quantity', itemId + 'quantity', '1', 1);
+            let minus = Utilities.createQuantityButton('minus', itemId + 'minus' , '-');
+            let quantity = Utilities.createQuantityButton('quantity', itemId + 'quantity', '1');
             let plus = Utilities.createQuantityButton('plus', itemId + 'plus', '+');
             parent = Utilities.appendChild2(parent, [minus, quantity, plus]);
-            grandparent.appendChild(parent);
 
         }
         function triggerAdd(btn) {
-            let properties = Utilities.getPropertiesById(btn.closest('.itemFull').id, btn.closest('.menufull').id.slice(0, -6));
+            let properties = Utilities.getPropertiesById(btn.closest('.itemFull').id,btn.closest('.menufull').id.slice(0,-6));
             placeQuantityButton(btn, properties.itemId);
             Cart.placeItem(properties);
 
@@ -395,11 +383,12 @@
                     triggerAdd(event.target);
                 }
                 else if (event.target.classList[0] === 'minus') {
-
-                    Cart.triggerMinus(event.target, 1);
+                                        
+                    Cart.triggerMinus(event.target,1);
                 }
-                else if (event.target.classList[0] === 'plus') {
-                    Cart.triggerPlus(event.target, 1);
+                else if(event.target.classList[0] === 'plus')
+                {
+                    Cart.triggerPlus(event.target,1);
                 }
             });
         };
@@ -417,7 +406,8 @@
         let cart = [];
         let itemCount = new Map();
         let total = 0;
-        function getCartItemPropertiesById(itemId) {
+        function getCartItemPropertiesById(itemId)
+        {
             return cart.filter(i => i.itemId === itemId)[0];
         }
         function addItemtoCart(properties) {
@@ -428,23 +418,20 @@
 
             let cartitem = document.createElement('div');
             cartitem.className = "cartitem";
-            cartitem.id = properties.itemId + 'cart';
-            let cartItemName = document.createElement('div');
+            cartitem.id = properties.itemId+ 'cart';
+            let cartItemName = document.createElement('span');
             cartItemName.textContent = properties.itemName;
             cartItemName.className = 'cartItemName';
-            let cartItemtype = document.createElement('div');
+            let cartItemtype = document.createElement('span');
             cartItemtype.textContent = properties.itemType;
             cartItemtype.className = 'cartItemType';
-            let cartItemPrice = document.createElement('div');
+            let cartItemPrice = document.createElement('span');
             cartItemPrice.textContent = '$' + properties.itemPrice;
             cartItemPrice.className = 'cartItemPrice';
-            let quantityDiv = document.createElement('div');
-            quantityDiv.className = 'quantityDivcart';
-            let minus = Utilities.createQuantityButton('minus', '', '-');
-            let quantity = Utilities.createQuantityButton('quantity', '', '1', 1);
-            let plus = Utilities.createQuantityButton('plus', '', '+');
-            quantityDiv = Utilities.appendChild2(quantityDiv,[minus,quantity,plus]);
-            cartitem = Utilities.appendChild2(cartitem, [cartItemtype, cartItemName, quantityDiv,cartItemPrice ]);
+            let minus = Utilities.createQuantityButton('minus','', '-');
+            let quantity = Utilities.createQuantityButton('quantity','', '1');
+            let plus = Utilities.createQuantityButton('plus','', '+');
+            cartitem = Utilities.appendChild2(cartitem, [cartItemtype, cartItemName, cartItemPrice, minus, quantity, plus]);
             return cartitem;
         }
         function addItemtoCartHTML(properties) {
@@ -456,160 +443,159 @@
                 filler1 = document.createElement('div');
                 filler1.id = 'filler1';
                 let filler = document.getElementsByClassName('filler')[0];
-                let cartTitle = document.createElement('div');
-                cartTitle.id = 'cartTitle';
-                cartTitle.textContent = "Cart";
-                filler.appendChild(cartTitle);
                 filler.appendChild(filler1);
-
                 listenBtnEvent();
 
             }
             let cartItem = createCartItem(properties);
             filler1.appendChild(cartItem);
         }
-        function updateOrCreateTotalDiv({ itemPrice, action }) {
+        function updateOrCreateTotalDiv({ itemPrice, action}) {
             let filler = document.getElementsByClassName('filler')[0];
             let cartTotal = document.getElementById('cartTotal');
-            let cartTotalDiv = document.getElementById('cartTotalDiv');
             if (!cartTotal) {
                 cartTotal = document.createElement('div');
                 cartTotal.id = 'cartTotal';
                 total = itemPrice;
                 cartTotal.textContent = "$" + total;
-                let title = document.createElement('div');
-                title.id = 'cartTotalTitle';
-                title.textContent = "Subtotal";
-                cartTotalDiv = document.createElement('div');
-                cartTotalDiv.id = "cartTotalDiv";
-                cartTotalDiv = Utilities.appendChild2(cartTotalDiv,[title,cartTotal]);
-                filler.appendChild(cartTotalDiv);
+                filler.appendChild(cartTotal);
             }
             else if (action === 'add') {
                 total = total + itemPrice;
                 cartTotal.textContent = "$" + total;
             }
             else if (action === 'minus') {
-                total = total - itemPrice;
-                if (total === 0) {
-                    cartTotalDiv.remove();
-                    let filler1 = document.getElementById('filler1');
-                    filler1.remove();
-                    let cartTitle = document.getElementById('cartTitle');
-                    cartTitle.remove();
-                    Utilities.toggleDisplay(document.getElementById('filler0'));
+               total = total - itemPrice;
+               if(total === 0)
+               {
+                   cartTotal.remove();
+                   Utilities.toggleDisplay(document.getElementById('filler0'));
 
-                }
-                else {
-                    cartTotal.textContent = "$" + total;
-                }
+               }
+               else {
+               cartTotal.textContent = "$" + total;
+               }
 
 
             }
             else if (action === 'plus') {
-                total = total + itemPrice;
+                total = total + itemPrice ;
                 cartTotal.textContent = "$" + total;
             }
         }
-        function removeItemFromCartById(itemId) {
-            for (var i = 0; i < cart.length; i++) {
-
-                if (cart[i].itemId === itemId) {
-                    cart.splice(i, 1);
+        function removeItemFromCartById(itemId)
+        {
+            for( var i = 0; i < cart.length; i++){ 
+                                   
+                if ( cart[i].itemId === itemId) { 
+                    cart.splice(i, 1); 
                     break;
                 }
             }
-            console.log(cart);
-
+        
         }
-        function removeQuantityFromMenu_And_ToggleAdd(itemId) {
-            document.querySelectorAll('#'+itemId + 'image .quantityDiv')[0].remove();
-            Utilities.toggleDisplay(document.querySelectorAll("#" + itemId + "image .addbutton")[0]);
-
+        function removeQuantityFromMenu_And_ToggleAdd(itemId)
+        {
+            document.getElementById(itemId+'minus').remove();
+            document.getElementById(itemId+'quantity').remove();
+            document.getElementById(itemId+'plus').remove();
+            Utilities.toggleDisplay(document.querySelectorAll("#"+itemId+"image .addbutton")[0]);
+            
         }
-        function decreaseItemCount(properties) {
+        function decreaseItemCount(properties)
+        {
             let itemQuantity = itemCount.get(properties.itemId);
-            if (itemQuantity === 1) {
+            if(itemQuantity===1)
+            {
                 itemCount.delete(properties.itemId);
                 removeItemFromCartById(properties.itemId);
-                let itemCartHTML = document.getElementById(properties.itemId + 'cart');
+                let itemCartHTML  = document.getElementById(properties.itemId + 'cart');
                 itemCartHTML.remove();
                 removeQuantityFromMenu_And_ToggleAdd(properties.itemId);
 
             }
-            else {
-                itemQuantity = itemQuantity - 1;
-                itemCount.set(properties.itemId, itemQuantity);
-                let itemHTMLquantity = document.querySelectorAll("#" + properties.itemId + "cart .quantity")[0];
+            else 
+            {
+                itemQuantity = itemQuantity -1 ;
+                itemCount.set(properties.itemId,itemQuantity);
+                let itemHTMLquantity = document.querySelectorAll("#"+properties.itemId+"cart .quantity")[0];
                 itemHTMLquantity.textContent = itemQuantity;
-                let itemHTMLPrice = document.querySelectorAll("#" + properties.itemId + "cart .cartItemPrice")[0];
-                itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice);
-                let itemHTMLquantityMenu = document.getElementById(properties.itemId + 'quantity');
-                itemHTMLquantityMenu.textContent = itemQuantity;
+                let itemHTMLPrice = document.querySelectorAll("#"+properties.itemId+"cart .cartItemPrice")[0];
+                itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice) ;
+                let itemHTMLquantityMenu = document.getElementById(properties.itemId+'quantity');
+                itemHTMLquantityMenu.textContent = itemQuantity ;
 
             }
 
         }
-        function increaseItemCount(properties) {
+        function increaseItemCount(properties)
+        {
             let itemQuantity = itemCount.get(properties.itemId);
-            itemQuantity = itemQuantity + 1;
-            itemCount.set(properties.itemId, itemQuantity);
-            let itemHTMLquantity = document.querySelectorAll("#" + properties.itemId + "cart .quantity")[0];
-            itemHTMLquantity.textContent = itemQuantity;
-            let itemHTMLPrice = document.querySelectorAll("#" + properties.itemId + "cart .cartItemPrice")[0];
-            itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice);
-            let itemHTMLquantityMenu = document.getElementById(properties.itemId + 'quantity');
-            itemHTMLquantityMenu.textContent = itemQuantity;
+            itemQuantity = itemQuantity + 1 ;
+                itemCount.set(properties.itemId,itemQuantity);
+                let itemHTMLquantity = document.querySelectorAll("#"+properties.itemId+"cart .quantity")[0];
+                itemHTMLquantity.textContent = itemQuantity;
+                let itemHTMLPrice = document.querySelectorAll("#"+properties.itemId+"cart .cartItemPrice")[0];
+                itemHTMLPrice.textContent = "$" + (itemQuantity * properties.itemPrice) ;
+                let itemHTMLquantityMenu = document.getElementById(properties.itemId+'quantity');
+                itemHTMLquantityMenu.textContent = itemQuantity ;
 
         }
-        function triggerMinus(btn, btnNumber) {
-            let itemId;
-            if (btnNumber === 1) {
-                itemId = btn.closest('.itemFull').id;
+        function triggerMinus(btn,btnNumber)
+        {   let itemId;
+            if(btnNumber===1)
+            {
+                 itemId= btn.closest('.itemFull').id;
 
             }
-            else {
-                itemId = btn.closest('.cartitem').id.slice(0, -4);
+            else
+            {
+                itemId = btn.closest('.cartitem').id.slice(0,-4);
             }
             let properties = getCartItemPropertiesById(itemId);
             decreaseItemCount(properties);
-            updateOrCreateTotalDiv({ itemPrice: properties.itemPrice, action: 'minus' });
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice,action : 'minus'});
         }
 
-        function triggerPlus(btn, btnNumber) {
+        function triggerPlus(btn,btnNumber)
+        {
             let itemId;
-            if (btnNumber === 1) {
-                itemId = btn.closest('.itemFull').id;
+            if(btnNumber===1)
+            {
+                 itemId= btn.closest('.itemFull').id;
 
             }
-            else {
-                itemId = btn.closest('.cartitem').id.slice(0, -4);
+            else
+            {
+                itemId = btn.closest('.cartitem').id.slice(0,-4);
             }
             let properties = getCartItemPropertiesById(itemId);
             increaseItemCount(properties);
-            updateOrCreateTotalDiv({ itemPrice: properties.itemPrice, action: 'plus' });
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice,action : 'plus'});
 
         }
 
         function placeItem(properties) {
             addItemtoCart(properties);
             addItemtoCartHTML(properties);
-            updateOrCreateTotalDiv({ itemPrice: properties.itemPrice, action: 'add' });
+            updateOrCreateTotalDiv({itemPrice : properties.itemPrice, action :'add'});
         }
-        function listenBtnEvent() {
+        function listenBtnEvent()
+        {
             let filler = document.getElementsByClassName('filler')[0];
             filler.addEventListener('click', (event) => {
                 if (event.target.classList[0] === 'minus') {
-
-                    triggerMinus(event.target, 2);
+                                        
+                    triggerMinus(event.target,2);
                 }
-                else if (event.target.classList[0] === 'plus') {
-                    triggerPlus(event.target, 2);
+                else if(event.target.classList[0] === 'plus')
+                {
+                    triggerPlus(event.target,2);
                 }
             });
         }
-
-        return { placeItem, triggerMinus, triggerPlus, listenBtnEvent };
+        
+        return { placeItem , triggerMinus, triggerPlus , listenBtnEvent};
 
     })();
     Head.createHeaderHTML();
