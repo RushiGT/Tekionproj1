@@ -407,6 +407,7 @@
             createMenuHTML_Section(menu);
             highlightSectionList();
             listenBtnEvent();
+            Cart.listenBtnEvent();
         };
 
 
@@ -462,7 +463,7 @@
                 filler.appendChild(cartTitle);
                 filler.appendChild(filler1);
 
-                listenBtnEvent();
+                
 
             }
             let cartItem = createCartItem(properties);
@@ -498,6 +499,8 @@
                     let cartTitle = document.getElementById('cartTitle');
                     cartTitle.remove();
                     Utilities.toggleDisplay(document.getElementById('filler0'));
+                    console.log(cart);
+                    console.log(itemCount);
 
                 }
                 else {
@@ -519,7 +522,7 @@
                     break;
                 }
             }
-            console.log(cart);
+            
 
         }
         function removeQuantityFromMenu_And_ToggleAdd(itemId) {
